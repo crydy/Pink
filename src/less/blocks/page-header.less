@@ -1,0 +1,67 @@
+.page-header {
+}
+
+
+// вынести
+
+.site-list {
+  background-color: @theme-color-1-l;
+  color: @theme-color-5;
+  .list-clear;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.site-list__item {
+  height: 64px;
+  font-weight: bold;
+  font-size: @base-font-size + 4;
+  line-height: @base-line-height + 8;
+  .mob-container;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.site-list__link {
+  display: block;
+  .a-clear;
+}
+
+.site-list__item--logo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+
+@media (min-width: @tablet-width) {
+  .site-list__item {
+    .tab-container;
+  }
+
+  .site-list__item--logo {
+    height: 110px;
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .site-list {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .site-list__item {
+    .mp-clear;
+  }
+
+  .site-list__toggle {
+    display: none;
+  }
+}
+
+

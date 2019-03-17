@@ -1,0 +1,39 @@
+// Сброс отступов
+.mp-clear() {
+  margin: 0;
+  padding: 0;
+}
+
+// Сброс для списков
+.list-clear() {
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+// Сброс для ссылок
+.a-clear() {
+  color: inherit;
+  text-decoration: none;
+}
+
+// Паддинги мобильные
+.mob-container {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+// паддинги
+.mob-container() {
+  padding-left: @p-mob;
+  padding-right: @p-mob;
+}
+.tab-container() {
+  padding-left: @p-tab;
+  padding-right: @p-tab;
+}
+.des-container() {
+  padding-left: @p-des;
+  padding-right: @p-des;
+}

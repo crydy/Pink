@@ -1,0 +1,51 @@
+// Временные обводки
+.page-header,
+.page-footer {
+  outline: @b;
+}
+
+.photo-card {
+  outline: @r;
+}
+
+.site-list__item {
+  outline: @y;
+}
+
+// Глобальные стили
+body {
+  min-width: @mibile-width;
+  .mp-clear;
+
+  font-family: @base-font-family;
+  font-size: @base-font-size;
+  line-height: @base-line-height;
+  font-style: normal;
+  color: @theme-color-1-l;
+
+  background-color: @theme-color-5;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+// Доступно скрыть
+.visually-hidden:not(:focus):not(:active),
+input[type="checkbox"].visually-hidden,
+input[type="radio"].visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+
+  border: 0;
+  padding: 0;
+
+  white-space: nowrap;
+
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+  <title>Pink</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&amp;subset=cyrillic" rel="stylesheet"> 
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Шапка -->
+  <header class="page-header">
+    <!-- Логотип -->
+    <a class="page-header__logo logo">
+      <img class="page-header__logo-image logo-image" src="http://placehold.it/100x100" alt="логотип Pink">
+    </a>
+    <!-- Навигация -->
+    <nav class="main-nav">
+      <button class="main-nav__toggle" type="button" aria-label="Открыть меню"></button>
+      <ul class="main-nav__list site-list">
+        <li class="site-list__item"><a href="index.html">Главная</a></li>
+        <li class="site-list__item site-list__item--active"><a href="photos.html">Фотографии</a></li>
+        <li class="site-list__item"><a href="form.html">Конкурс</a></li>
+        <li class="site-list__item"><a href="#">HTML Academy</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Основное содержимое -->
+  <main class="page-main">
+    <!-- Заглавие страницы -->
+    <div class="page-title">
+      <h1 class="page-title__title">Фотографии пользователей</h1>
+    </div>
+
+    <div class="photos-intro">
+      Взгляните на фотографии, которые выкладывают пользователи! Видите, как не хватает ваших?
+    </div>
+
+    <!-- Карточки с фото -->
+    <section class="photos">
+      
+      <!-- Карточка 1 (заглавная) -->
+      <div class="photos__item photo-card photo-card--main">
+        <img class="photo-card__img" src="http://placehold.it/100x100" alt="Фото польователя">
+        <a class="photo-card--main__button button" stc="#">Панорама дня</a>
+        <div class="photo-card__description">
+          <!-- Данные пользователя -->
+          <p class="photo-card__user-data">
+            <span class="photo-card__author">Анна</span> <time class="photo-card__time" datetime="2019-03-15 19:00">(5 минут назад)</time>
+          </p>
+          <!-- Пользовательский текст -->
+          <p class="photo-card__user-text">
+            Прыгать или нет? Напишите в коментарии свой совет и смотрите прямую трансляцию в перископе, задавайте свои вопросы!
+          </p>
+          <!-- Лайки -->
+          <div class="photo-card__like-wrap">
+            <p class="photo-card__like-text">Нравится: <span class="photo-card__like-value">215</span></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Карточка 2 -->
+      <div class="photos__item photo-card">
+        <img class="photo-card__img" src="http://placehold.it/100x100" alt="Фото польователя">
+        <div class="photo-card__description">
+          <!-- Данные пользователя -->
+          <p class="photo-card__user-data">
+            <span class="photo-card__author">Левон</span> <time class="photo-card__time" datetime="2019-03-15 19:00">(5 часов назад)</time>
+          </p>
+          <!-- Пользовательский текст -->
+          <p class="photo-card__user-text">
+            Вчера он на луну летал, сегодня в руки к нам попал.
+          </p>
+          <!-- Лайки -->
+          <div class="photo-card__like-wrap">
+            <p class="photo-card__like-text">Нравится: <span class="photo-card__like-value">356</span></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Карточка 3 -->
+      <div class="photos__item photo-card">
+        <img class="photo-card__img" src="http://placehold.it/100x100" alt="Фото польователя">
+        <div class="photo-card__description">
+          <!-- Данные пользователя -->
+          <p class="photo-card__user-data">
+            <span class="photo-card__author">Антон</span> <time class="photo-card__time" datetime="2019-03-15 19:00">(12 часов назад)</time>
+          </p>
+          <!-- Пользовательский текст -->
+          <p class="photo-card__user-text">
+            Соседи будут рады!
+          </p>
+          <!-- Лайки -->
+          <div class="photo-card__like-wrap">
+            <p class="photo-card__like-text">Нравится: <span class="photo-card__like-value">666</span></p>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+
+    <!-- Загрузка фото -->
+    <section class="photo-downloader">
+      <h2 class="visually-hidden">Публикация вашего фото!</h2>
+
+      <div class="photo-downloader__intro">
+        Затмите их всех!
+        Выкладывайте все, что накопилось в телефоне!
+      </div>
+
+      <!-- Блок загрузки -->
+      <div class="photo-downloader__wrap">
+        <img class="photo-downloader__img" src="http://placehold.it/100x100" alt="Загрузите сюда свое изображение">
+        <!-- Настройки фото -->
+        <form class="photo-downloader__user-form">
+          <fieldset class="photo-downloader__user-menu">
+            <legend class="visually-hidden">Настройки вашего изображения</legend>
+
+            <label for="crop" aria-label="Кадрирование">Кадрирование</label>
+            <input type="range" id="crop">
+            <label for="saturation" aria-label="Насыщенность">Насыщенность</label>
+            <input type="range" id="saturation">
+            <label for="brightness" aria-label="Яркость">Яркость</label>
+            <input type="range" id="brightness">
+
+            <button class="photo-downloader__button" type="submit">Запостить</button>
+            <button class="photo-downloader__button" type="reset" disabled>Отмена</button>
+          </fieldset>
+        </form>
+
+      </div>
+    </section>
+
+  </main> 
+
+  <!-- Подвал -->
+  <footer class="page-footer">
+    <!-- Логотип -->
+    <a class="page-footer__logo logo">
+      <img class="page-footer__logo-image logo-image" src="http://placehold.it/100x100" alt="логотип Pink">
+    </a>
+    <!-- Социальные кнопки -->
+    <ul class="page-footer__social social">
+      <li class="social__item social__item--twitter">
+        <a href="#" class="social__social-link">
+          <span class="visually-hidden">Мы в Twitter</span>
+        </a>
+      </li>
+      <li class="social__item social__item--facebook">
+        <a href="#" class="social__social-link">
+          <span class="visually-hidden">Мы в FaceBook</span>
+        </a>
+      </li>
+      <li class="social__item social__item--youtube">
+        <a href="#" class="social__social-link">
+          <span class="visually-hidden">Мы в YouTube</span>
+        </a>
+      </li>
+    </ul>
+    <!-- Копирайт -->
+    <p class="page-footer__copyright">Разработано
+      <a href="#" class="page-footer__copyright-link">
+        <span class="visually-hidden"> HTML Academy</span>
+      </a>
+    </p>
+  </footer>
+
+</body>
+</html>
