@@ -1,13 +1,37 @@
+// Блок page-header
+
 .page-header {
+  background: url(../img/bg-header.jpg) 50% 0 no-repeat;
+  background-color: @theme-color-1;
 }
 
+@media (min-width: @desktop-width) {
+  .page-header {
+    background-size: cover;
+  }
+}
 
-// вынести
+// Блок main-nav
+
+@media (min-width: @desktop-width) {
+  .main-nav {
+    background-color: @nav-color;
+    width: 100%;
+  }
+
+  .main-nav__wrapper {
+    .des-container;
+  }
+}
+
+// Блок site-list
 
 .site-list {
   background-color: @theme-color-1-l;
   color: @theme-color-5;
+
   .list-clear;
+  text-transform: uppercase;
 
   display: flex;
   flex-direction: column;
@@ -15,32 +39,61 @@
 
 .site-list__item {
   height: 64px;
+  box-sizing: border-box;
+
   font-weight: bold;
   font-size: @base-font-size + 4;
-  line-height: @base-line-height + 8;
-  .mob-container;
+  line-height: 64px;
+  text-align: center;
 
   display: flex;
   align-items: center;
   justify-content: center;
+
+  border-top: 1px solid @site-list-item-top;
+  border-bottom: 1px solid @site-list-item-bottom;
 }
 
 .site-list__link {
   display: block;
+  width: 100%;
   .a-clear;
+
+  &:not([href]) {
+    user-select: none;
+    cursor: inherit;
+  }
+
+  &[href]:hover,
+  &[href]:focus {
+    color: @theme-color-2;
+  }
+
+  &[href]:active {
+    color: @theme-color-2;
+    opacity: .3;
+  }
 }
 
 .site-list__item--logo {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border-top: none;
+
+  .mob-container;
+}
+
+.site-list__logo-image {
+  display: block;
+
 }
 
 
 
 @media (min-width: @tablet-width) {
   .site-list__item {
-    .tab-container;
+    // .tab-container;
   }
 
   .site-list__item--logo {
@@ -53,15 +106,33 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-  }
 
+    background-color: transparent;
+  }
+  
   .site-list__item {
+    font-weight: normal;
+    text-transform: none;
+    
+    border-top: none;
+    border-bottom: none;
     .mp-clear;
   }
 
   .site-list__toggle {
     display: none;
   }
-}
 
+  .site-list__link {
+    line-height: 40px;
+
+    &:not([href]) {
+      box-shadow: 0 2px 0 0 white;
+    }
+    &[href]:active {
+      color: @theme-color-5;
+    }
+  }
+
+}
 

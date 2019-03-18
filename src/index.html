@@ -15,35 +15,42 @@
   <header class="page-header">
     <!-- Навигация -->
     <nav class="main-nav">
-      <ul class="main-nav__list site-list">
-        
-        <!-- Логотип -->
-        <li class="site-list__item site-list__item--logo">
-          <a class="site-list__logo logo">
-            <img class="site-list__logo-image logo-image" src="http://placehold.it/78x24" alt="логотип Pink">
-          </a>
-          <button class="site-list__toggle" type="button" aria-label="Показать меню"></button>
-        </li>
+      <div class="main-nav__wrapper">
 
-        <!-- Пункты навигации -->
-        <li class="site-list__item site-list__item--active"><a class="site-list__link" href="#">Главная</a></li>
-        <li class="site-list__item"><a class="site-list__link" href="photos.html">Фотографии</a></li>
-        <li class="site-list__item"><a class="site-list__link" href="form.html">Конкурс</a></li>
-        <li class="site-list__item"><a class="site-list__link" href="#">HTML Academy</a></li>
-      </ul>
+        <ul class="main-nav__list site-list">
+
+          <!-- Логотип -->
+          <li class="site-list__item site-list__item--logo">
+            <a class="site-list__logo logo">
+              <img class="site-list__logo-image logo-image" src="img/logo-white-mobile.png" alt="логотип Pink">
+            </a>
+            <button class="site-list__toggle site-list__toggle--open" type="button" aria-label="Показать меню"></button>
+          </li>
+  
+          <!-- Пункты навигации -->
+          <li class="site-list__item">
+            <a class="site-list__link">Главная</a>
+          </li>
+          <li class="site-list__item">
+            <a class="site-list__link" href="photos.html">Фотографии</a>
+          </li>
+          <li class="site-list__item">
+            <a class="site-list__link" href="form.html">Конкурс</a>
+          </li>
+          <li class="site-list__item">
+            <a class="site-list__link" href="#">HTML Academy</a>
+          </li>
+
+        </ul>
+      </div>
     </nav>
-  </header>
-
-  <!-- Основное содержимое -->
-  <main class="page-main">
-    <h1 class="visually-hidden">Все о приложении Pink</h1>
 
     <!-- Блок загрузки приложения -->
     <section class="app-download">
       <h2 class="visually-hidden">Загрузка приложения</h2>
 
       <!-- Изображение руки -->
-      <img class="app-download__picture" src="http://placehold.it/100x100" alt="Изображение приложения Pink">
+      <img class="app-download__picture" src="img/hand-with-phone.png" alt="Изображение приложения Pink">
 
       <p class="app-download__slogan">Взгляните на жизнь иначе!</p>
       <a class="button app-download__main-button" href="#" >Скачать приложение</a>
@@ -80,6 +87,13 @@
       </p>
 
     </section>
+  </header>
+
+  <!-- Основное содержимое -->
+  <main class="page-main">
+    <h1 class="visually-hidden">Все о приложении Pink</h1>
+
+
 
     <!-- Преимущества -->
     <section class="advantages">
