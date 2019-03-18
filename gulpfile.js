@@ -32,6 +32,12 @@ function copyHTML() {
     .pipe(dest('build'));
 };
 
+function copyJS() {
+  console.log('CopyJS');
+  return src('src/js/**/*.js')
+    .pipe(dest('build/js'));
+};
+
 // Команды консоли
 exports.less = lessToCss;
 exports.bs = startServer;
@@ -40,4 +46,4 @@ exports.html = copyHTML;
 exports.default = startServer;
 
 // Прослушка событий
-watch(['src/less/**/*.less', 'src/**/*.html'], { events: 'all' }, series(copyHTML, lessToCss, serverReload));
+watch(['src/less/**/*.less', 'src/**/*.html', 'src/js/**/*.js'], { events: 'all' }, series(copyHTML, lessToCss, copyJS, serverReload));

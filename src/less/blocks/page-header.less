@@ -139,21 +139,26 @@
   }
 
   // цвета при активности
+  &:hover,
+  &:focus {
+    outline: none;
+  }
   &:hover::before,
-  &:hover::after,
-  &:focus::before,
-  &:focus::after {
+  &:hover::after {
     background-color: @theme-color-2;
   }
   &--closed:hover::before,
-  &--closed:hover::after,
-  &--closed:focus::before,
-  &--closed:focus::after {
+  &--closed:hover::after {
     box-shadow: 0 10px 0 0 @theme-color-2,
                 0 20px 0 0 @theme-color-2;
   }
   &:active {
     opacity: .3;
+  }
+
+  // скрыть если не работает JS
+  &--no-js {
+    display: none;
   }
 }
 
