@@ -13,6 +13,7 @@
 
   <!-- Шапка -->
   <header class="page-header">
+
     <!-- Навигация -->
     <nav class="main-nav">
       <div class="main-nav__wrapper">
@@ -46,45 +47,48 @@
     </nav>
 
     <!-- Блок загрузки приложения -->
-    <section class="app-download">
+    <section class="page-title app-download">
       <h2 class="visually-hidden">Загрузка приложения</h2>
 
       <!-- Изображение руки -->
       <img class="app-download__picture" src="img/hand-with-phone.png" alt="Изображение приложения Pink">
 
-      <p class="app-download__slogan">Взгляните на жизнь иначе!</p>
-      <a class="button app-download__main-button" href="#" >Скачать приложение</a>
+      <!-- Менюшка -->
+      <div class="app-download__wrapper">
+        <p class="app-download__slogan">Взгляните на жизнь иначе!</p>
+        <a class="button app-download__main-button" href="#" >Скачать приложение</a>
+  
+        <!-- Кнопки для разных систем -->
+        <ul class="app-download__systems-list">
+          <li class="app-download__systems-list-item">
+            <a class="button
+                      app-download__systems-list-button
+                      app-download__systems-list-button--apple" href="#" aria-label="Скачать приложение для Apple" >
+              <img class="app-download__systems-list-img" src="http://placehold.it/100x100" alt="Лого Apple">
+            </a>
+          </li>
+  
+          <li class="app-download__systems-list-item">          
+            <a class="button
+                      app-download__systems-list-button
+                      app-download__systems-list-button--android" href="#" aria-label="Скачать приложение для Android" >
+              <img class="app-download__systems-list-img" src="http://placehold.it/100x100" alt="Лого Android">
+            </a>
+          </li>
+  
+          <li class="app-download__systems-list-item">
+            <a class="button
+                      app-download__minor-button
+                      app-download__minor-button--windows" href="#" aria-label="Скачать приложение для Windows" >
+              <img class="app-download__systems-list-img" src="http://placehold.it/100x100" alt="Лого Windows">
+            </a>
+          </li>
+        </ul>
+        <p class="app-download__footnote">
+          Доступно для iPhone, iPad, Android, Windows Phone, OS X, Windows 8
+        </p>
+      </div>
 
-      <!-- Кнопки для разных систем -->
-      <ul class="app-download__systems-list">
-        <li class="app-download__systems-list-item">
-          <a class="button
-                    app-download__systems-list-button
-                    app-download__systems-list-button--apple" href="#" aria-label="Скачать приложение для Apple" >
-            <img class="app-download__systems-list-img" src="http://placehold.it/100x100" alt="Лого Apple">
-          </a>
-        </li>
-
-        <li class="app-download__systems-list-item">          
-          <a class="button
-                    app-download__systems-list-button
-                    app-download__systems-list-button--android" href="#" aria-label="Скачать приложение для Android" >
-            <img class="app-download__systems-list-img" src="http://placehold.it/100x100" alt="Лого Android">
-          </a>
-        </li>
-
-        <li class="app-download__systems-list-item">
-          <a class="button
-                    app-download__minor-button
-                    app-download__minor-button--windows" href="#" aria-label="Скачать приложение для Windows" >
-            <img class="app-download__systems-list-img" src="http://placehold.it/100x100" alt="Лого Windows">
-          </a>
-        </li>
-      </ul>
-
-      <p class="app-download__footnote">
-        Доступно для iPhone, iPad, Android, Windows Phone, OS X, Windows 8
-      </p>
 
     </section>
   </header>

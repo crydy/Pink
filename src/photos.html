@@ -13,28 +13,47 @@
 
   <!-- Шапка -->
   <header class="page-header">
-    <!-- Логотип -->
-    <a class="page-header__logo logo">
-      <img class="page-header__logo-image logo-image" src="http://placehold.it/100x100" alt="логотип Pink">
-    </a>
+
     <!-- Навигация -->
     <nav class="main-nav">
-      <button class="main-nav__toggle" type="button" aria-label="Открыть меню"></button>
-      <ul class="main-nav__list site-list">
-        <li class="site-list__item"><a href="index.html">Главная</a></li>
-        <li class="site-list__item site-list__item--active"><a href="photos.html">Фотографии</a></li>
-        <li class="site-list__item"><a href="form.html">Конкурс</a></li>
-        <li class="site-list__item"><a href="#">HTML Academy</a></li>
-      </ul>
+      <div class="main-nav__wrapper">
+
+        <ul class="main-nav__list site-list">
+
+          <!-- Логотип -->
+          <li class="site-list__item site-list__item--logo">
+            <a class="site-list__logo logo">
+              <img class="site-list__logo-image logo-image" src="img/logo-white-mobile.png" alt="логотип Pink">
+            </a>
+            <button class="site-list__toggle site-list__toggle--open" type="button" aria-label="Показать меню"></button>
+          </li>
+  
+          <!-- Пункты навигации -->
+          <li class="site-list__item">
+            <a class="site-list__link" href="index.html">Главная</a>
+          </li>
+          <li class="site-list__item">
+            <a class="site-list__link">Фотографии</a>
+          </li>
+          <li class="site-list__item">
+            <a class="site-list__link" href="form.html">Конкурс</a>
+          </li>
+          <li class="site-list__item">
+            <a class="site-list__link" href="#">HTML Academy</a>
+          </li>
+
+        </ul>
+      </div>
     </nav>
+
+    <!-- Титул страницы -->
+    <section class="page-title">
+      <h1 class="page-title__title">Конкурс на самое безбашенное путешествие с Пинк</h1>
+    </section>
   </header>
 
   <!-- Основное содержимое -->
   <main class="page-main">
-    <!-- Заглавие страницы -->
-    <div class="page-title">
-      <h1 class="page-title__title">Фотографии пользователей</h1>
-    </div>
 
     <div class="photos-intro">
       Взгляните на фотографии, которые выкладывают пользователи! Видите, как не хватает ваших?

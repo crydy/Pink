@@ -1,12 +1,19 @@
 // Блок page-header
 
 .page-header {
-  background: url(../img/bg-header.jpg) 50% 0 no-repeat;
+  background: url(../img/bg-header.jpg) 50% 260px no-repeat;
   background-color: @theme-color-1;
+}
+
+@media (min-width: @tablet-width) {
+  .page-header {
+    // background-position: 0 260px;
+  }
 }
 
 @media (min-width: @desktop-width) {
   .page-header {
+    background-position: 50% 0;
     background-size: cover;
   }
 }
@@ -86,9 +93,69 @@
 
 .site-list__logo-image {
   display: block;
-
 }
 
+// Кнопка-открывашка меню
+.site-list__toggle {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+  position: relative;
+
+  // кнопка при открытом меню
+  &--open::before,
+  &--open::after {
+    position: absolute;
+    content: "";
+    width: 110%;
+    height: 4px;
+    left: -1px;
+    top: 10px;
+    background-color: @theme-color-4;
+  }
+  &--open::before {
+    transform: rotate(45deg);
+  }
+  &--open::after {
+    transform: rotate(-45deg);
+  }
+
+  // кнопка при закрытом меню
+  &--closed {
+    width: 50px;
+  }
+  &--closed::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 4px;
+    left: 0;
+    top: 0;
+    background-color: @theme-color-4;
+    box-shadow: 0 10px 0 0 @theme-color-4,
+                0 20px 0 0 @theme-color-4;
+  }
+
+  // цвета при активности
+  &:hover::before,
+  &:hover::after,
+  &:focus::before,
+  &:focus::after {
+    background-color: @theme-color-2;
+  }
+  &--closed:hover::before,
+  &--closed:hover::after,
+  &--closed:focus::before,
+  &--closed:focus::after {
+    box-shadow: 0 10px 0 0 @theme-color-2,
+                0 20px 0 0 @theme-color-2;
+  }
+  &:active {
+    opacity: .3;
+  }
+}
 
 
 @media (min-width: @tablet-width) {
@@ -127,7 +194,7 @@
     line-height: 40px;
 
     &:not([href]) {
-      box-shadow: 0 2px 0 0 white;
+      box-shadow: 0 2px 0 0 @theme-color-5;
     }
     &[href]:active {
       color: @theme-color-5;
@@ -136,3 +203,33 @@
 
 }
 
+
+// Блок page-title
+
+.page-title {
+  color: @theme-color-5;
+  padding: 25px 12%;
+  text-align: center;
+}
+
+.page-title__title {
+  font-size: 24px;
+  font-weight: normal;
+  line-height: 30px;
+}
+
+// Блок app-download
+
+.app-download {
+  padding: 0;
+  height: 398px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+}
+
+.app-download__picture {
+  align-self: center;
+}
