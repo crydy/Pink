@@ -109,6 +109,7 @@ window.addEventListener('resize', function() {
       startInDesktop = false;
       buttonsClassToggle();
       showListItems(false);
+      pageHeader.style.backgroundPosition = `50% ${nav.offsetHeight - navLotoItem.offsetHeight}px`
       return;
     }
 
