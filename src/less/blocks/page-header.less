@@ -42,6 +42,10 @@
 
   display: flex;
   flex-direction: column;
+
+  &--closed {
+    background-color: @nav-color;
+  }
 }
 
 .site-list__item {
@@ -223,18 +227,78 @@
   line-height: 30px;
 }
 
+
+
+
 // Блок app-download
 
 .app-download {
   padding: 0;
-  height: 398px;
+  height: 668px;
 
   display: flex;
   flex-direction: column;
   justify-content: start;
-  align-items: center;
+  align-items: stretch;
+}
+
+.app-download__picture-wrapper {
+  position: relative;
+  height: 400px;
+  width: 100%;
 }
 
 .app-download__picture {
-  align-self: center;
+  position: absolute;
+  bottom: 0;
+  right: 35%;
+
+  display: block;
+  width: 260px;
+  height: auto;
+}
+
+.app-download__wrapper {
+  display: none;
+  background-color: @theme-color-1;
+}
+.app-download__slogan {
+  display: none;
+}
+
+@media (min-width: @tablet-width) {
+  .app-download {
+    height: 620px;
+
+    flex-direction: row;
+    justify-content: stretch;
+  }
+  
+  .app-download__picture-wrapper {
+    height: 620px;
+  }
+
+  .app-download__picture {
+    left: auto;
+    right: 5%;
+
+    width: 480px;
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .app-download {
+    height: 735px;
+  }
+  
+  .app-download__picture-wrapper {
+    height: 735px;
+  }
+
+  .app-download__picture {
+    left: auto;
+    right: 10%;
+
+    width: 570px;
+  }
 }
