@@ -1,3 +1,21 @@
+// Блок button-1
+
+.button-1 {
+  --line-height: 56px;
+
+  display: inline-block;
+  box-sizing: border-box;
+  
+  color: inherit;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: @base-font-size + 4;
+  line-height: 56px;
+
+  border: 3px solid @theme-color-4;
+  border-radius: 30px;
+}
+
 // Блок page-header
 
 .page-header {
@@ -233,8 +251,10 @@
 // Блок app-download
 
 .app-download {
+  --app-download-height: 668px;
+
   padding: 0;
-  height: 668px;
+  height: var(--app-download-height);
 
   display: flex;
   flex-direction: column;
@@ -243,15 +263,31 @@
 }
 
 .app-download__picture-wrapper {
+  --hand-right-padding: 35%;
+
   position: relative;
   height: 400px;
   width: 100%;
+
+  // Картинка на экране мобильника
+  &::before {
+    content: "";
+    position: absolute;
+    width: 108px;
+    height: 187px;
+    right: calc(var(--hand-right-padding) + 40px);
+    bottom: 82px;
+    background: url(../img/bg-header.jpg) 50% 0 no-repeat;
+    background-size: auto 120%;
+    background-color: @theme-color-2;
+    background-blend-mode: luminosity;
+  }
 }
 
 .app-download__picture {
   position: absolute;
   bottom: 0;
-  right: 35%;
+  right: var(--hand-right-padding);
 
   display: block;
   width: 260px;
@@ -259,46 +295,139 @@
 }
 
 .app-download__wrapper {
-  display: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  box-sizing: border-box;
+  height: calc(var(--app-download-height) - 400px);
   background-color: @theme-color-1;
+  padding-top: 28px;
+  padding-bottom: 35px;
+  .mob-container;
 }
+
 .app-download__slogan {
   display: none;
 }
 
-@media (min-width: @tablet-width) {
-  .app-download {
-    height: 620px;
+.app-download__systems-list {
+  .list-clear;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
 
-    flex-direction: row;
-    justify-content: stretch;
+.app-download__systems-list-item {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.app-download__main-button {
+  width: 280px;
+
+  &:hover {
+    background-color: @theme-color-4;
+    color: @theme-color-2;
   }
-  
-  .app-download__picture-wrapper {
-    height: 620px;
-  }
-
-  .app-download__picture {
-    left: auto;
-    right: 5%;
-
-    width: 480px;
+  &:active {
+    color: fade(@theme-color-2, 30%);
   }
 }
 
-@media (min-width: @desktop-width) {
+.app-download__systems-list-button {
+  display: block;
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.app-download__footnote {
+  .mp-clear;
+}
+
+
+
+
+
+// Планшет
+@media (min-width: @tablet-width) {
   .app-download {
-    height: 735px;
+    --app-download-height: 620px;
+
+    flex-direction: row;
+    justify-content: stretch;
+    
   }
   
   .app-download__picture-wrapper {
-    height: 735px;
+    height: var(--app-download-height);
+    --hand-right-padding: 5%;
+
+    // Картинка на экране мобильника
+    &::before {
+      width: 195px;
+      height: 348px;
+      right: calc(var(--hand-right-padding) + 75px);
+      bottom: 149px;
+    }
   }
 
   .app-download__picture {
     left: auto;
-    right: 10%;
+
+    width: 480px;
+  }
+
+  .app-download__wrapper {
+    position: absolute;
+    right: 50%;
+    background-color: transparent;
+    height: calc( var(--app-download-height) - 80px );
+    padding-top: 60px;
+  }
+
+  .app-download__slogan {
+    display: block;
+    font-size: @base-font-size + 26px;
+    line-height: 1.4em;
+    .mp-clear;
+  }
+}
+
+// Десктоп
+@media (min-width: @desktop-width) {
+  .app-download {
+    --app-download-height: 735px;
+  }
+  
+  .app-download__picture-wrapper {
+    --hand-right-padding: 15%;
+
+    // Картинка на экране мобильника
+    &::before {
+      width: 232px;
+      height: 413px;
+      right: calc(var(--hand-right-padding) + 88px);
+      bottom: 177px;
+    }
+  }
+
+  .app-download__picture {
+    left: auto;
 
     width: 570px;
+  }
+
+  .app-download__wrapper {
+    left: 5vw;
+    right: auto;
+    height: calc( var(--app-download-height) - 140px );
+    padding-top: 100px;
   }
 }

@@ -7,7 +7,7 @@ let navItems = document.querySelectorAll('.site-list__item');
 let navLotoItem = document.querySelector('.site-list__item--logo');
 let nav = document.querySelector('.site-list');
 let tabletWidth = 660;
-let desktopWidth = 1200;
+let desktopWidth = 1040;
 
 // загрузились на десктопе?
 let startInDesktop = (window.innerWidth >= desktopWidth) ? true : false;
