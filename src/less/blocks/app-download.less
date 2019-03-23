@@ -1,13 +1,19 @@
 .app-download {
   --app-download-height: 668px;
 
-  padding: 0;
+  position: relative;
+
   height: var(--app-download-height);
+  max-width: @desktop-width * 1.2;
+
+  margin: 0 auto;
+  padding: 0;
 
   display: flex;
   flex-direction: column;
   justify-content: start;
   align-items: stretch;
+
 }
 
 .app-download__picture-wrapper {
