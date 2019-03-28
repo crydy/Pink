@@ -37,6 +37,9 @@
     display: block;
     margin-top: 32px;
   }
+  &-minor-break {
+    display: none;
+  }
 }
 
 .advantages__main-wrap {
@@ -157,10 +160,23 @@
 
   .advantages__intro {
     padding-bottom: 60px;
-  }
 
-  .advantages__intro-minor {
-    display: inline;
+    clip-path: polygon(
+      0 0,
+      100% 0,
+      100% 80%,
+      0 100%
+    );
+
+    &-major {
+      .tab-container;
+    }
+    &-minor {
+      display: inline;
+    }
+    &-minor-break {
+      display: inline;
+    }
   }
 
   .advantages__main-wrap {
@@ -206,11 +222,28 @@
 
 @media (min-width: @desktop-width) {
 
+  .advantages {
+    --bottom-collapse: 0;
+  }
+
+  .advantages__intro {
+    clip-path: polygon(
+      0 0,
+      100% 0,
+      100% 75%,
+      0 100%
+    );
+  }
+
+  .advantages__intro-major {
+    .des-container;
+  }
+
   .advantages__main-wrap {
     .des-container;
     flex-direction: column;
-    margin: 0;
     width: auto;
+    margin-top: -85px;
   }
 
   .advantages__image-list {
@@ -253,10 +286,38 @@
       text-align: center;
 
       width: calc(100% / 3);
-      padding: 0 3.5%;
+      padding: 0 calc(10% - 50px);
+      padding-top: 55px;
+
+      // Тень под телефонами
+      position: relative;
+      &:before {
+        position: absolute;
+        content: "";
+        background: url(../img/phone-bottom-shadow.png) 50% 50% no-repeat;
+        width: 294px;
+        height: 17px;
+        margin-left: -147px;
+        top: -8.5px;
+        z-index: -1;
+      }
+      &:after {
+        position: absolute;
+        content: "";
+        background-color: @theme-color-4;
+        width: 294px;
+        height: 17px;
+        margin-left: -147px;
+        top: 0;
+      }
     }
     &-title {
       font-size: inherit;
+      font-size: @base-font-size + 16;
+      line-height: @base-line-height + 6;
+
+      height: 80px;
+      padding-bottom: 6px;
     }
   }
 

@@ -1,6 +1,8 @@
 const { series, parallel, src, dest, watch } = require('gulp'),
       less = require('gulp-less'),
       plumber = require('gulp-plumber'),
+      postcss = require('gulp-postcss'),
+      autoprefixer = require('autoprefixer'),
       server = require('browser-sync').create();
 
 function lessToCss() {
@@ -8,6 +10,9 @@ function lessToCss() {
   return src('src/less/style.less')
     .pipe(plumber())
     .pipe(less())
+    .pipe(postcss([
+      autoprefixer()
+    ]))
     .pipe(dest('build/css'));
 };
 

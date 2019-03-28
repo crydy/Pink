@@ -21,15 +21,22 @@
 .mob-container() {
   padding-left: @p-mob;
   padding-right: @p-mob;
+  // outline: @r;
 }
 .tab-container() {
   padding-left: @p-tab;
   padding-right: @p-tab;
+  // outline: @p;
 }
 .des-container() {
   padding-left: @p-des;
   padding-right: @p-des;
-
-  width: 960px;
+  .des-maximum;
+  // outline: @b;
+  // width: 960px;
+  // margin: 0 auto;
+}
+.des-maximum() {
+  max-width: @desktop-max-width;
   margin: 0 auto;
 }

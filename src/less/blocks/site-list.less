@@ -62,8 +62,34 @@
   .mob-container;
 }
 
+.site-list__logo-link {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  overflow: hidden;
+  width: 76px;
+  height: 24px;
+}
+
 .site-list__logo-image {
-  display: block;
+  flex-shrink: 0;
+
+  // Базовый окрас лого
+  --main-logo__body-color: @theme-color-5;
+  --main-logo__ornamentals-color: @theme-color-2;
+  // Скрыть очки со звездами
+  --main-logo__glasses-decoraged-display-value: none;
+
+  &:not(.site-list__logo-image--index-page):hover {
+    --main-logo__body-color: @theme-color-2;
+    --main-logo__ornamentals-color: @logo-ornamentals-color;
+    cursor: pointer;
+  }
+  &:not(.site-list__logo-image--index-page):active {
+    opacity: .3;
+    --main-logo__body-color: @theme-color-5;
+    --main-logo__ornamentals-color: @theme-color-5;
+  }
 }
 
 // Кнопка-открывашка меню
@@ -127,7 +153,7 @@
     opacity: .3;
   }
 
-  // скрыть если не работает JS
+  // скрыть если не активен JS
   &--no-js {
     display: none;
   }
@@ -135,12 +161,26 @@
 
 
 @media (min-width: @tablet-width) {
+
   .site-list__item--logo {
     height: 110px;
+    .tab-container
+  }
+
+  .site-list__logo-link {
+    width: auto;
+    height: auto;
+  }
+  
+  .site-list__logo-image {
+    // Показать упрощенные очки в лого
+    --main-logo__glasses-plain-display-value: inline;
   }
 }
 
+
 @media (min-width: @desktop-width) {
+
   .site-list {
     flex-direction: row;
     justify-content: space-between;
@@ -156,6 +196,19 @@
     border-top: none;
     border-bottom: none;
     .mp-clear;
+
+    &:last-child {
+      margin-right: 7vw;
+    }
+    &:first-child {
+      margin-left: 7vw;
+    }
+  }
+  
+  .site-list__logo-image {
+    // Показать очки со звездами в лого
+    --main-logo__glasses-plain-display-value: none;
+    --main-logo__glasses-decoraged-display-value: inline;
   }
 
   .site-list__toggle {

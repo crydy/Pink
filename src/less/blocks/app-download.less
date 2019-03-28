@@ -4,16 +4,14 @@
   position: relative;
 
   height: var(--app-download-height);
-  max-width: @desktop-width * 1.2;
 
   margin: 0 auto;
   padding: 0;
 
   display: flex;
   flex-direction: column;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: stretch;
-
 }
 
 .app-download__picture-wrapper {
@@ -137,10 +135,13 @@
 
   .app-download__wrapper {
     position: absolute;
-    right: 50%;
+    // right: 50%;
+    // left: calc(30vw - 200px); 
+    left: calc(35vw - 250px); 
     background-color: transparent;
     height: calc( var(--app-download-height) - 80px );
     padding-top: 60px;
+    padding-left: @p-tab;
   }
 
   .app-download__slogan {
@@ -155,10 +156,11 @@
 @media (min-width: @desktop-width) {
   .app-download {
     --app-download-height: 735px;
+    .des-container;
   }
   
   .app-download__picture-wrapper {
-    --hand-right-padding: 15%;
+    --hand-right-padding: 10%;
 
     // Картинка на экране мобильника
     &::before {
@@ -176,7 +178,7 @@
   }
 
   .app-download__wrapper {
-    left: 5vw;
+    left: 10%;
     right: auto;
     height: calc( var(--app-download-height) - 140px );
     padding-top: 100px;

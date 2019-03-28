@@ -2,19 +2,202 @@
   position: relative;
   z-index: 1;
   display: none;
-  background-color: black;
+  background-color: @theme-color-5;
 }
 
 @media (min-width: @tablet-width) {
 
   .effect {
-    display: block;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    padding-top: 60px;
+    padding-bottom: 100px;
+    .tab-container;
+
+    &__timer-block {
+      // width: 240px;
+      // height: 278px;
+
+      // текст внутри таймера
+      position: relative;
+      &::before {
+        position: absolute;
+        content: "24";
+        left: calc(50% - 80px);
+        top: calc(55% - 80px);
+
+        width: 160px;
+        height: 160px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        line-height: 96px;
+        font-size: 96px;
+        font-size: 96px;
+        font-weight: bold;
+        color: @timer-inner-color;
+      }
+    }
+
+    &__timer-image {
+      // width: 240px;
+      // width: 400px;
+
+      min-height: 278px;
+      height: 35vw;
+      margin: 0 auto;
+    }
+
+    &__info-block {
+      width: 50%;
+    }
   }
 
 }
 
+
+
+// БЛОК REVIEWS
+
 .reviews {
   position: relative;
   z-index: 1;
-  background-color: black;
+  background-color: @theme-color-5;
+  text-align: center;
+  padding-top: 50px;
+  padding-bottom: 42px;
+  .mob-container;
+
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% 90%,
+    0 100%
+  );
+
+  &__list {
+    .list-clear;
+    padding-bottom: 40px;
+  }
+
+  &__item:not(.reviews__item--active) {
+    display: none;
+  }
+
+  &__blockquote {
+    display: flex;
+    flex-direction: column;
+
+    margin: 0;
+  }
+
+  &__author-name {
+    color: @theme-color-3;
+    font-style: normal;
+    font-weight: bold;
+    font-size: @base-font-size + 4;
+    line-height: @base-line-height + 6;
+    margin-bottom: 25px;
+  }
+
+  &__author-data {
+    display: none;
+  }
+
+  &__text {
+    order: 1;
+    margin: 0;
+    line-height: @base-line-height + 6;
+  }
+
+  &__toggles {
+    // position: absolute;
+    // top: 300px;
+  }
+}
+
+
+@media (min-width: @tablet-width) {
+
+  .reviews {
+    .tab-container;
+
+    &__author-name {
+      font-size: @base-font-size + 4;
+      margin: 0;
+    }
+
+    &__author-data {
+      display: inline;
+    }
+
+    &__text {
+      order: 0;
+    }
+  }
+
+}
+
+
+@media (min-width: @desktop-width) {
+
+  .reviews {
+    .des-container;
+
+    &__author-name {
+      font-size: @base-font-size + 10;
+    }
+  }
+
+}
+
+
+// Блок slider-toggles
+
+.slider-toggles {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  &__item {
+    box-sizing: border-box;
+    display: block;
+    width: 12px;
+    height: 12px;
+    background-color: @slider-switch-button-inner-color;
+    border: 3px solid @theme-color-5;
+    border-radius: 50%;
+    .mp-clear;
+    margin-left: 6.5px;
+    margin-right: 6.5px;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  &__item:first-child {
+    margin-left: 0;
+  }
+  &__item:last-child {
+    margin-right: 0;
+  }
+  &__item--active{
+    border-color: @theme-color-1-l;
+    background-color: @theme-color-5;
+  }
+}
+
+
+
+
+
+
+
+// Блок prices 
+.prices {
+  // background-color: red;
 }

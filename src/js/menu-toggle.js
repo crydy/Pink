@@ -61,7 +61,7 @@ function buttonsClassToggle() {
 menuToggle.classList.remove('site-list__toggle--no-js');
 
 // Закрыть меню если мы не на десктопе
-if (window.innerWidth <= desktopWidth) {
+if (window.innerWidth < desktopWidth) {
   // Установить "классы закрытости"
   buttonsClassToggle();
 
@@ -71,7 +71,7 @@ if (window.innerWidth <= desktopWidth) {
   pageHeader.style.backgroundPosition = '50% 0';
 }
 
-// Обрабатывать клип по кнопке
+// Обрабатывать клик по кнопке
 menuToggle.addEventListener('click', function(evt) {
   evt.preventDefault();
 
@@ -101,7 +101,7 @@ window.addEventListener('resize', function() {
   };
 
   // Уход с досктопной верстки
-  if (window.innerWidth <= desktopWidth) {
+  if (window.innerWidth < desktopWidth) {
 
     // Скрыть меню, если загружались с десктопной версии
     // и вьюпорт уменьшился
