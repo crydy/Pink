@@ -20,6 +20,7 @@
     "gulp-postcss": "^8.0.0",
     "gulp-posthtml": "^3.0.4",
     "gulp-rename": "^1.4.0",
+    "gulp-rm": "^2.0.0",
     "gulp-webp": "^4.0.1",
     "posthtml-include": "^1.2.0"
   }
