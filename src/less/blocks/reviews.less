@@ -1,0 +1,208 @@
+.reviews {
+  position: relative;
+  z-index: 1;
+  background-color: @theme-color-5;
+  text-align: center;
+
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% calc(100% - 25px),
+    0 100%
+  );
+
+  &__wrapper {
+    padding-top: 50px;
+    padding-bottom: 42px;
+    .mob-container;
+  }
+
+  &__list {
+    .list-clear;
+    padding-bottom: 40px;
+  }
+
+  &__item:not(.reviews__item--active) {
+    display: none;
+  }
+
+  &__blockquote {
+    display: flex;
+    flex-direction: column;
+
+    margin: 0;
+  }
+
+  &__author-name {
+    color: @theme-color-3;
+    font-style: normal;
+    font-weight: bold;
+    font-size: @base-font-size + 4;
+    line-height: @base-line-height + 6;
+    margin-bottom: 25px;
+  }
+
+  &__author-data {
+    display: none;
+    font-size: @base-font-size;
+  }
+
+  &__text {
+    order: 1;
+    margin: 0;
+    line-height: @base-line-height + 6;
+  }
+
+  &__toggles {
+    margin-bottom: 45px;
+
+    &-desktop {
+      display: none;
+    }
+  }
+}
+
+
+@media (min-width: @tablet-width) {
+
+  .reviews {
+
+    clip-path: polygon(
+      0 0,
+      100% 0,
+      100% calc(100% - 50px),
+      0 100%
+    );  
+
+    &__wrapper {
+      .tab-container;
+      padding-top: 0;
+    }
+
+    &__text {
+      font-size: @base-font-size + 4;
+      padding-bottom: 40px;
+    }
+
+    &__author-name {
+      font-size: @base-font-size + 6;
+      margin: 0;
+    }
+
+    &__author-data {
+      display: block;
+      color: @theme-color-1-l;
+    }
+
+    &__text {
+      order: 0;
+    }
+
+    &__toggles {
+      margin-bottom: 25px;
+    }
+  }
+
+}
+
+
+@media (min-width: @desktop-width) {
+
+  .reviews {
+
+    clip-path: polygon(
+      0 0,
+      100% 0,
+      100% calc(100% - 85px),
+      0 100%
+    );
+
+    &__wrapper {
+      position: relative;
+      .des-container;
+      padding-top: 196px;
+
+      &:before {
+        position: absolute;
+        content: "";
+        height: 66px;
+        width: 80px;
+        top: 72px;
+        left: calc(50% - 40px);
+        background: url(../img/quotes.svg) 50% 50% no-repeat;
+      }
+    }
+
+    &__blockquote {
+      padding-left: 13%;
+      padding-right: 13%;
+      padding-bottom: 45px;
+    }
+    &__author-name {
+      font-size: @base-font-size + 10;
+    }
+
+    &__author-data {
+      font-size: @base-font-size + 4;
+    }
+
+    &__toggles {
+      display: none;
+
+      // Кнопки десктопной версии
+      &-desktop {
+        display: block;
+        position: absolute;
+        
+        top: 200px;
+
+        width: 30px;
+        height: 50px;
+
+        border: 0;
+        padding: 0;
+        background-color: transparent;
+
+        &--left {
+          left: @p-des;
+          transform: rotate(180deg);
+        }
+        &--right {
+          right: @p-des;
+        }
+
+        &::before,
+        &::after {
+          position: absolute;
+          content: "";
+          width: 2px;
+          height: 30px;
+          background-color: @slider-switch-button-inner-color;
+        }
+        &::before {
+          left: 18px;
+          top: 20px;
+          transform: rotate(45deg);
+        }
+        &::after {
+          left: 18px;
+          top: 0;
+          transform: rotate(135deg);
+        }
+
+        &:hover {
+          cursor: pointer;
+        }
+        &:hover::before,
+        &:hover::after {
+          background-color: @slider-switch-button-inner-color--hover;
+        }
+        &:active::before,
+        &:active::after {
+          background-color: @slider-switch-button-inner-color--active;
+        }
+      }
+    }
+  }
+
+}

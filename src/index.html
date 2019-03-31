@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="format-detection" content="telephone=no">
   <title>Pink</title>
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&amp;subset=cyrillic" rel="stylesheet"> 
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&amp;subset=cyrillic" rel="stylesheet"> 
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/style.min.css">
 </head>
@@ -113,15 +113,15 @@
         <!-- Картинки телефонов -->
         <div class="advantages__image-list">
           <div class="advantages__image-wrap">
-            <img class="advantages__image" src="img/phone-body.png" alt="Скриншот приложения Pink" width="186" height="382">
+            <img class="advantages__image" src="img/phone-body.svg" alt="Скриншот приложения Pink" width="186" height="382">
           </div>
   
           <div class="advantages__image-wrap advantages__image-wrap--color">
-            <img class="advantages__image" src="img/phone-body.png" alt="Скриншот приложения Pink" width="186" height="382">
+            <img class="advantages__image" src="img/phone-body.svg" alt="Скриншот приложения Pink" width="186" height="382">
           </div>
   
           <div class="advantages__image-wrap advantages__image-wrap--smile">
-            <img class="advantages__image" src="img/phone-body.png" alt="Скриншот приложения Pink" width="186" height="382">
+            <img class="advantages__image" src="img/phone-body.svg" alt="Скриншот приложения Pink" width="186" height="382">
           </div>
         </div>
   
@@ -147,17 +147,19 @@
     <!-- Эффект -->
     <section class="effect">
       <h2 class="visually-hidden">Эффект от нашего приложения</h2>
-      <!-- Таймер из спрайта -->
-      <div class="effect__timer-block">
-        <svg class="effect__timer-image">
-          <use xlink:href="#timer">
-        </svg>
-      </div>
-      <!-- Инфоблок -->
-      <div class="effect__info-block">
-        <p class="effect__title">Эффект на 24 часа</p>
-        <p class="effect__description">Британские ученые провели исследования и доказали, что положительный эффект от сипользования приложения длится целые сутки!</p>
-        <a class="effect__link" href="#">Узнать больше об исследовании</a>
+      <div class="effect__wrapper">
+        <!-- Таймер из спрайта -->
+        <div class="effect__timer-block">
+          <svg class="effect__timer-image">
+            <use xlink:href="#timer">
+          </svg>
+        </div>
+        <!-- Инфоблок -->
+        <div class="effect__info-block">
+          <p class="effect__title">Эффект <br>на 24 часа!</p>
+          <p class="effect__description">Британские ученые провели исследования и доказали, что положительный эффект от сипользования приложения длится целые сутки!</p>
+          <a class="effect__link" href="#">Узнать больше об исследовании</a>
+        </div>
       </div>
     </section>
 
@@ -165,88 +167,114 @@
     <section class="reviews">
       <h2 class="visually-hidden">Отзывы о Pink</h2>
 
-      <ul class="reviews__list">
-        <li class="reviews__item reviews__item--active">
-          <blockquote class="reviews__blockquote">
-            <p class="reviews__text">Это приложение перевернуло мой миг и позволило по-новому взглянуть на привычные серые вещи! А еще я познакомился со своей будущей женой в комментариях к выложенной Фотографии!</p>
-            <cite class="reviews__author-name">Николай Петров<span class="reviews__author-data">25 лет, водитель трамвая</span></cite>
-          </blockquote>
-        </li>
+      <div class="reviews__wrapper">
 
-        <li class="reviews__item">
-          <blockquote class="reviews__blockquote">
-            <p class="reviews__text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eum suscipit fugit, cumque ut commodi ipsum non itaque veniam similique ullam?</p>
-            <cite class="reviews__author-name">Илья Сорокин<span class="reviews__author-data">29 лет, лифтер</span></cite>
-          </blockquote>
-        </li>
+        <ul class="reviews__list">
+          <li class="reviews__item reviews__item--active">
+            <blockquote class="reviews__blockquote">
+              <p class="reviews__text">Это приложение перевернуло мой миг и позволило по-новому взглянуть на привычные серые вещи! А еще я познакомился со своей будущей женой в комментариях к выложенной фотографии!</p>
+              <cite class="reviews__author-name">Николай Петров<span class="reviews__author-data">25 лет, водитель трамвая</span></cite>
+            </blockquote>
+          </li>
+  
+          <li class="reviews__item">
+            <blockquote class="reviews__blockquote">
+              <p class="reviews__text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eum suscipit fugit, cumque ut commodi ipsum non itaque veniam similique ullam?</p>
+              <cite class="reviews__author-name">Илья Сорокин<span class="reviews__author-data">29 лет, лифтер</span></cite>
+            </blockquote>
+          </li>
+  
+          <li class="reviews__item">
+            <blockquote class="reviews__blockquote">
+              <p class="reviews__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos molestias qui sapiente nobis!</p>
+              <cite class="reviews__author-name">Алла Скоробейко<span class="reviews__author-data">19 лет, студентка</span></cite>
+            </blockquote>
+          </li>
+        </ul>
 
-        <li class="reviews__item">
-          <blockquote class="reviews__blockquote">
-            <p class="reviews__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos molestias qui sapiente nobis!</p>
-            <cite class="reviews__author-name">Алла Скоробейко<span class="reviews__author-data">19 лет, студентка</span></cite>
-          </blockquote>
-        </li>
-
-      </ul>
-
-      <!-- Переключатели слайдов -->
-      <div class="reviews__toggles slider-toggles">
-        <button class="slider-toggles__item slider-toggles__item--active" type="button" aria-label="Показать первый отзыв"></button>
-        <button class="slider-toggles__item" type="button" aria-label="Показать второй отзыв"></button>
-        <button class="slider-toggles__item" type="button" aria-label="Показать третий отзыв"></button>
+        <!-- Переключатели слайдов -->
+        <div class="reviews__toggles slider-toggles">
+          <button class="slider-toggles__item slider-toggles__item--active" type="button" aria-label="Показать первый отзыв"></button>
+          <button class="slider-toggles__item" type="button" aria-label="Показать второй отзыв"></button>
+          <button class="slider-toggles__item" type="button" aria-label="Показать третий отзыв"></button>
+        </div>
+        <!-- Переключатели десктопной версии -->
+        <button class="reviews__toggles-desktop reviews__toggles-desktop--left" type="button" aria-label="Показать предыдущий отзыв"></button>
+        <button class="reviews__toggles-desktop reviews__toggles-desktop--right" type="button" aria-label="Показать следующий отзыв"></button>
       </div>
+
 
     </section>
 
     <!-- Цены -->
     <section class="prices">
       <h2 class="visually-hidden">Стоимость Pink</h2>
+      <div class="prices__wrapper">
 
-      <!-- Таблица расценок -->
-      <table class="prices__table">
-        <tr class="prices__title-row">
-
-          <th class="prices__th-empty"></th>
-
-          <th class="prices__th">
-            <p class="prices__rate">База</p>
-            <p class="prices__price">1,99 USD</p>
-          </th>
-          <th class="prices__th">
-            <p class="prices__rate">Стандарт</p>
-            <p class="prices__price">3,99 USD</p>
-          </th>
-          <th class="prices__th">
-            <p class="prices__rate">Анлим</p>
-            <p class="prices__price">9,99 USD</p>
-          </th>
-
-        </tr>
-        <tr class="prices__row">
-          <td class="prices__option">Розовый фильтр</td>
-          <td class="prices__td-include" aria-label="Опция включена"></td>
-          <td class="prices__td-include" aria-label="Опция включена"></td>
-          <td class="prices__td-include" aria-label="Опция включена"></td>
-        </tr>
-        <tr class="prices__row">
-          <td class="prices__option">Смайлики</td>
-          <td class="prices__td" aria-label="Опция отсутствует"></td>
-          <td class="prices__td-include" aria-label="Опция включена"></td>
-          <td class="prices__td-include" aria-label="Опция включена"></td>
-        </tr>
-        <tr class="prices__row">
-          <td class="prices__option">Комментарии</td>
-          <td class="prices__td" aria-label="Опция отсутствует"></td>
-          <td class="prices__td" aria-label="Опция отсутствует"></td>
-          <td class="prices__td-include" aria-label="Опция включена"></td>
-        </tr>
-      </table>
-
-      <!-- Переключатели слайдов -->
-      <div class="prices__toggles slider-toggles">
-        <button class="slider-toggles__item" type="button" aria-label="Показать базовый тариф"></button>
-        <button class="slider-toggles__item slider-toggles__item--active" type="button" aria-label="Показать стандартный тариф"></button>
-        <button class="slider-toggles__item" type="button" aria-label="Показать анлим-тариф"></button>
+        <!-- Таблица расценок -->
+        <table class="prices__table">
+          <tr class="prices__title-row">
+  
+            <th class="prices__th-empty"></th>
+  
+            <th class="prices__th">
+              <p class="prices__rate">База</p>
+              <p class="prices__price">1,99 USD</p>
+            </th>
+            <th class="prices__th prices__th--hit">
+              <p class="prices__rate">Стандарт</p>
+              <p class="prices__price">3,99 USD</p>
+            </th>
+            <th class="prices__th">
+              <p class="prices__rate">Анлим</p>
+              <p class="prices__price">9,99 USD</p>
+            </th>
+  
+          </tr>
+          <tr class="prices__row">
+            <td class="prices__td prices__td--option-name">Розовый&nbsp;фильтр</td>
+            <td class="prices__td prices__td--include" aria-label="Опция включена">
+              <span class="prices__inner-option-name" hidden>Розовый фильтр</span>
+            </td>
+            <td class="prices__td prices__td--include" aria-label="Опция включена">
+              <span class="prices__inner-option-name" hidden>Розовый фильтр</span>
+            </td>
+            <td class="prices__td prices__td--include" aria-label="Опция включена">
+              <span class="prices__inner-option-name" hidden>Розовый фильтр</span>
+            </td>
+          </tr>
+          <tr class="prices__row">
+            <td class="prices__td prices__td--option-name">Смайлики</td>
+            <td class="prices__td prices__td--exclude" aria-label="Опция отсутствует">
+              <span class="prices__inner-option-name" hidden>Смайлики</span>
+            </td>
+            <td class="prices__td prices__td--include" aria-label="Опция включена">
+              <span class="prices__inner-option-name" hidden>Смайлики</span>
+            </td>
+            <td class="prices__td prices__td--include" aria-label="Опция включена">
+              <span class="prices__inner-option-name" hidden>Смайлики</span>
+            </td>
+          </tr>
+          <tr class="prices__row">
+            <td class="prices__td prices__td--option-name">Комментарии</td>
+            <td class="prices__td prices__td--exclude" aria-label="Опция отсутствует">
+              <span class="prices__inner-option-name" hidden>Комментарии</span>
+            </td>
+            <td class="prices__td prices__td--exclude" aria-label="Опция отсутствует">
+              <span class="prices__inner-option-name" hidden>Комментарии</span>
+            </td>
+            <td class="prices__td prices__td--include" aria-label="Опция включена">
+              <span class="prices__inner-option-name" hidden>Комментарии</span>
+            </td>
+          </tr>
+        </table>
+  
+        <!-- Переключатели слайдов -->
+        <div class="prices__toggles slider-toggles">
+          <button class="slider-toggles__item" type="button" aria-label="Показать базовый тариф"></button>
+          <button class="slider-toggles__item slider-toggles__item--active" type="button" aria-label="Показать стандартный тариф"></button>
+          <button class="slider-toggles__item" type="button" aria-label="Показать безлимитный тариф"></button>
+        </div>
       </div>
 
     </section>
