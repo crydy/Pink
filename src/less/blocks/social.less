@@ -1,0 +1,38 @@
+.social {
+  .list-clear;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  &__item:not(:last-child) {
+    margin-right: 12px;
+  }
+  
+  &__link {
+    display: flex;
+
+    box-sizing: border-box;
+    width: 52px;
+    height: 52px;
+
+    border: 3px solid @social-border-color;
+    border-radius: 50%;
+
+    &:hover {
+      border-color: @theme-color-1-l;
+    }
+    &:active {
+      border-color: lighten(@theme-color-3, 70%);
+      opacity: .3;
+    }
+  }
+  
+  &__icon {
+    margin: auto;
+  }
+  
+  &__icon--youtube {
+    margin-left: 38%;
+  }
+}

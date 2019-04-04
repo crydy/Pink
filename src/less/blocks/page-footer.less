@@ -1,0 +1,126 @@
+.page-footer {
+
+  &__wrapper {    
+    .container;
+
+    padding-top: 40px;
+    padding-bottom: 40px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__logo {
+    display: flex;
+    margin-bottom: 40px;
+    
+    &-image {
+      margin: auto;
+      // Базовый окрас лого
+      --main-logo__text-color: @theme-color-3;
+      --main-logo__i-dot-color: @theme-color-2;
+      --main-logo__glasses-decorated-color: @theme-color-2;
+      --main-logo__glasses-plain-color: @theme-color-2;
+      --main-logo__ornamentals-color: @theme-color-3;
+      // Скрыть очки со звездами и точку над i
+      --main-logo__glasses-decoraged-display-value: none;
+      --main-logo__glasses-plain-display-value: inline;
+      --main-logo__i-dot-display-value: none;
+      
+      &:not(.page-footer__logo-image--index-page):hover {
+        cursor: pointer;
+        --main-logo__text-color: @theme-color-2;
+        --main-logo__ornamentals-color: @logo-ornamentals-color;
+        --main-logo__ornamentals-color: @theme-color-2;
+      }
+      &:not(.page-footer__logo-image--index-page):active {
+        opacity: .3;
+        cursor: pointer;
+        --main-logo__text-color: @theme-color-3;
+        --main-logo__i-dot-color: @theme-color-3;
+      }
+    }
+  }
+
+  &--index-page {
+    display: none;
+  }
+
+  &__social {
+    max-width: 320px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+  }
+
+  &__copyright {
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    
+    &-link {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+
+      color: inherit;
+
+      &:hover {
+        --html-academy-logo-color: @theme-color-1-l;
+      }
+      &:active {
+        --html-academy-logo-color: lighten(@theme-color-3, 70%);
+      }
+    }
+    
+    &-icon {
+      margin-left: 15px;
+    }
+  }
+}
+
+
+@media (min-width: @tablet-width) {
+  
+  .page-footer {
+
+    &__wrapper {
+      flex-direction: row;
+      justify-content: space-between;
+
+      min-height: 128px;
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+
+    &__logo {
+      margin-top: -12px;
+      margin-bottom: 0;
+    }
+    &__social {
+      margin-bottom: 0;
+    }
+
+    &--index-page {
+      display: block;
+    }
+  }
+}
+
+
+@media (min-width: @desktop-width) {
+  
+  .page-footer {
+
+    &__wrapper {
+      min-height: 200px;
+    }
+
+    &__logo-image {
+      --main-logo__glasses-plain-display-value: none;
+      --main-logo__glasses-decoraged-display-value: inline;
+      --main-logo__i-dot-display-value: inline;
+    }
+  }
+}

@@ -5,20 +5,21 @@
   background-color: @theme-color-5;
 }
 
+
 @media (min-width: @tablet-width) {
 
   .effect {
     display: block;
     
     &__wrapper {
+      .container;
+
       display: flex;
       flex-direction: row;
       justify-content: flex-end;
   
       padding-top: 60px;
       padding-bottom: 100px;
-      .tab-container;
-
     }
 
     &__timer-block {
@@ -47,7 +48,7 @@
         font-size: 96px;
         font-weight: bold;
         color: @timer-inner-color;
-      }
+      } // ----------------------
     }
 
     &__timer-image {
@@ -92,7 +93,6 @@
     background-color: @theme-color-4;
     
     &__wrapper {
-      .des-container;
       padding-bottom: 65px;
     }
 
@@ -111,16 +111,11 @@
 
     &__info-block {
       width: 60%;
-
       padding-right: 5vw;
     }
 
     &__title br {
       display: none;
-    }
-
-    &__description {
-
     }
   }
 }

@@ -1,11 +1,31 @@
 .page-title {
   color: @theme-color-5;
   padding: 25px 12%;
+  padding-top: 32px;
+  padding-bottom: 85px;
   text-align: center;
 }
 
 .page-title__title {
+  .mp-clear;
+
   font-size: 24px;
   font-weight: normal;
   line-height: 30px;
+}
+
+@media (min-width: @tablet-width) {
+  
+  .page-title {
+    padding-top: 80px;
+    padding-bottom: 145px;
+  }
+}
+
+@media (min-width: @desktop-width) {
+
+  .page-title {
+    padding-top: 75px;
+    padding-bottom: 105px;
+  }
 }

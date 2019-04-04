@@ -4,16 +4,21 @@
   justify-content: center;
 
   &__item {
+    .mp-clear;
+
     box-sizing: border-box;
     display: block;
+
     width: 6px;
     height: 6px;
-    background-color: @slider-switch-button-inner-color;
+    
     border: none;
     border-radius: 50%;
-    .mp-clear;
+    
     margin-left: 9.5px;
     margin-right: 9.5px;
+    
+    background-color: @slider-switch-button-inner-color;
 
     &:hover {
       cursor: pointer;

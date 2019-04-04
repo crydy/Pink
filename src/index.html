@@ -11,13 +11,15 @@
 </head>
 <body>
 
-  <!-- SVG's -->
+
+  <!-- SVG-sprite (инлайнится в разметку через PostHTML-include) -->
   <div hidden>
     <include src="src/img/sprite.svg"></include>
   </div>
 
+
   <!-- Шапка -->
-  <header class="page-header">
+  <header class="page-header" id="index-page-start">
 
     <!-- Навигация -->
     <nav class="main-nav">
@@ -54,9 +56,9 @@
       </div>
     </nav>
 
+
     <!-- Блок загрузки приложения -->
     <section class="page-title app-download">
-      <h2 class="visually-hidden">Загрузка приложения</h2>
 
       <!-- Рука с телефоном -->
       <div class="app-download__picture-wrapper">
@@ -71,19 +73,19 @@
         <!-- Кнопки для разных систем -->
         <ul class="app-download__systems-list">
           <li class="app-download__systems-list-item">
-            <a class="button app-download__systems-list-button" href="#" aria-label="Скачать приложение для Apple" >
+            <a class="button app-download__systems-list-button" aria-label="Скачать приложение для Apple" >
               <img class="app-download__systems-list-img" src="img/apple-logo.png" alt="Лого Apple" width="56" height="56">
             </a>
           </li>
   
           <li class="app-download__systems-list-item">          
-            <a class="button app-download__systems-list-button" href="#" aria-label="Скачать приложение для Android" >
+            <a class="button app-download__systems-list-button" aria-label="Скачать приложение для Android" >
               <img class="app-download__systems-list-img" src="img/android-logo.png" alt="Лого Android" width="56" height="56">
             </a>
           </li>
   
           <li class="app-download__systems-list-item">
-            <a class="button app-download__systems-list-button" href="#" aria-label="Скачать приложение для Windows" >
+            <a class="button app-download__systems-list-button" aria-label="Скачать приложение для Windows" >
               <img class="app-download__systems-list-img" src="img/microsoft-logo.png" alt="Лого Windows" width="56" height="56">
             </a>
           </li>
@@ -93,10 +95,10 @@
         </p>
       </div>
 
-
     </section>
   </header>
 
+  
   <!-- Основное содержимое -->
   <main class="page-main">
     <h1 class="visually-hidden">Все о приложении Pink</h1>
@@ -282,59 +284,85 @@
     <!-- Контакты -->
     <section class="contacts">
       <h2 class="visually-hidden">Наши контакты</h2>
-      <p class="contacts__intro">Остались вопросы? Свяжитесь с нами!</p>
 
-      <!-- Список контактов -->
-      <ul class="contacts__list">
-        <li class="contacts__item">
-          <p class="contacts__item-title">Звоните:</p>
-          <p class="contacts__item-text">+7 (812) 555-66-66</p>
-        </li>
-        <li class="contacts__item">
-          <p class="contacts__item-title">Пишите:</p>
-          <p class="contacts__item-text">mail@htmlacademy.ru</p>
-        </li>
-        <li class="contacts__item">
-          <p class="contacts__item-title">Приезжайте в гости:</p>
-          <p class="contacts__item-text">ул. Большая Конюшенная, 19/8</p>
-        </li>
-      </ul>
+      <div class="contacts__wrapper">
+        <p class="contacts__intro">Остались вопросы?<br>Свяжитесь с нами!</p>
+  
+        <!-- Список контактов -->
+        <ul class="contacts__list">
+          <li class="contacts__list-item">
+            <p class="contacts__list-item-title">Звоните:</p>
+            <p class="contacts__list-item-text">+7 (812) 555-66-66</p>
+          </li>
+          <li class="contacts__list-item">
+            <p class="contacts__list-item-title">Пишите:</p>
+            <p class="contacts__list-item-text">mail@htmlacademy.ru</p>
+          </li>
+          <li class="contacts__list-item">
+            <p class="contacts__list-item-title">Приезжайте в гости:</p>
+            <p class="contacts__list-item-text">ул. Большая<br>Конюшенная, 19/8</p>
+          </li>
+        </ul>
+      </div>
 
       <!-- Карта -->
-      <img src="http://placehold.it/400x100" alt="Мы на карте: ул. Большая Конюшенная, 19/8">
+      <div class="contacts__map-wrapper">
+        <!-- <iframe class="contacts__map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1998.603728544154!2d30.320858716322096!3d59.93871648187625!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4696310fca145cc1%3A0x42b32648d8238007!2z0JHQvtC70YzRiNCw0Y8g0JrQvtC90Y7RiNC10L3QvdCw0Y8g0YPQuy4sIDE5LzgsINCh0LDQvdC60YIt0J_QtdGC0LXRgNCx0YPRgNCzLCAxOTExODY!5e0!3m2!1sru!2sru!4v1554195205002!5m2!1sru!2sru" frameborder="0" style="border:0" allowfullscreen></iframe> -->
+      </div>
     </section>
   </main>
 
+
   <!-- Подвал -->
-  <footer class="page-footer">
-    <!-- Логотип -->
-    <a class="page-footer__logo logo">
-      <img class="page-footer__logo-image logo-image" src="http://placehold.it/100x100" alt="логотип Pink">
-    </a>
-    <!-- Социальные кнопки -->
-    <ul class="page-footer__social social">
-      <li class="social__item social__item--twitter">
-        <a href="#" class="social__social-link">
-          <span class="visually-hidden">Мы в Twitter</span>
-        </a>
-      </li>
-      <li class="social__item social__item--facebook">
-        <a href="#" class="social__social-link">
-          <span class="visually-hidden">Мы в FaceBook</span>
-        </a>
-      </li>
-      <li class="social__item social__item--youtube">
-        <a href="#" class="social__social-link">
-          <span class="visually-hidden">Мы в YouTube</span>
-        </a>
-      </li>
-    </ul>
-    <!-- Копирайт -->
-    <p class="page-footer__copyright">Разработано
-      <a href="#" class="page-footer__copyright-link">
-        <span class="visually-hidden"> HTML Academy</span>
+  <footer class="page-footer page-footer--index-page">
+    <div class="page-footer__wrapper">
+
+      <!-- Логотип -->
+      <a class="page-footer__logo logo" href="#index-page-start">
+        <svg class="page-footer__logo-image page-footer__logo-image logo-image" width="150" height="42">
+          <use xlink:href="#main-logo">
+        </svg>
       </a>
-    </p>
+
+      <!-- Социальные кнопки -->
+      <ul class="page-footer__social social">
+        <li class="social__item social__item">
+          <a href="#" class="social__link">
+            <span class="visually-hidden">Мы в Twitter</span>
+            <svg class="social__icon social__icon--twitter" width="20" height="16">
+              <use xlink:href="#twitter-logo">
+            </svg>
+          </a>
+        </li>
+        <li class="social__item social__item">
+          <a href="#" class="social__link">
+            <span class="visually-hidden">Мы в FaceBook</span>
+            <svg class="social__icon social__icon--facebook" width="10" height="20">
+              <use xlink:href="#facebook-logo">
+            </svg>
+          </a>
+        </li>
+        <li class="social__item social__item">
+          <a href="#" class="social__link">
+            <span class="visually-hidden">Мы в YouTube</span>
+            <svg class="social__icon social__icon--youtube" width="14" height="16">
+              <use xlink:href="#youtube-logo">
+            </svg>
+          </a>
+        </li>
+      </ul>
+
+      <!-- Копирайт -->
+      <p class="page-footer__copyright">
+        <a href="#" class="page-footer__copyright-link">Разработано
+          <span class="visually-hidden"> HTML Academy</span>
+          <svg class="page-footer__copyright-icon" width="28" height="35">
+            <use xlink:href="#html-academy-logo">
+          </svg>
+        </a>
+      </p>
+
+    </div>
   </footer>
 
 

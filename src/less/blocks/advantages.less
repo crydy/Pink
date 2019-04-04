@@ -21,15 +21,19 @@
   background-color: @theme-color-5;
 
   &-major {
-    .mob-container;
+    .container;
+
+    padding-right: 40px;
+    padding-left: 40px;
   
     margin: 0;
     padding-top: 54px;
     padding-bottom: 66px;
   
     text-align: center;
-    font-size: @base-font-size + 26;
     line-height: 1.2em;
+    font-size: @base-font-size + 26;
+    font-weight: 300;
   
   }
   
@@ -43,10 +47,11 @@
 }
 
 .advantages__main-wrap {
+  .container;
+  
   display: flex;
   flex-direction: column;
   margin-bottom: var(--bottom-collapse);
-  .mob-container;
 }
 
 .advantages__image-list {
@@ -60,14 +65,13 @@
 
   // ширина телефона (расчет длинны автоматический от пропорций)
   --phone-width: 49%;
+  width: var(--phone-width);
 
   // положение экрана телефона
   --phone-screen-left: 5.8%;
   --phone-screen-right: 5.8%;
   --phone-screen-top: 11.5%;
   --phone-screen-bottom: 13.5%;
-
-  width: var(--phone-width);
 
   // картинка на экране
   &::before {
@@ -81,14 +85,16 @@
 
     background: url(../img/phone-bg.jpg) 50% 50% no-repeat;
     background-size: cover;
-  }
+  } // -------------------
+
   // заполнение цветом
   &--color::before,
   &--smile::before {    
     background-color: @theme-color-2;
     background-blend-mode: luminosity;
-  }
-  // текст и смайл
+  } // -------------------------------
+
+  // --------- текст и смайл ---------
   &--smile::after {
     position: absolute;
 
@@ -102,28 +108,28 @@
     padding-top: 90%;
 
     background: url(../img/phone-smile.png) 50% 32% no-repeat;
-  background-size: 55% auto;
+    background-size: 55% auto;
 
     left: var(--phone-screen-left);
     right: var(--phone-screen-right);
     top: var(--phone-screen-top);
     bottom: var(--phone-screen-bottom);
+  } // -------------------------------
 
-    
-  }
   // спрятать лишние на мобильном
   display: none;
   &--smile {
     display: block;
-  }
+  } // ------------
 }
 
-// Ограничить растягивание текста на экране мобильных
+// Ограничить растягивание текста
+// на экране мобильных
 @media (min-width: 760px) {
   .advantages__image-wrap--smile::after {
     font-size: 53px;
     line-height: 53px;
-  }
+  } // ---------------
 }
 
 .advantages__image {
@@ -152,6 +158,7 @@
   }
 }
 
+
 @media (min-width: @tablet-width) {
 
   .advantages {
@@ -168,9 +175,6 @@
       0 100%
     );
 
-    &-major {
-      .tab-container;
-    }
     &-minor {
       display: inline;
     }
@@ -182,7 +186,6 @@
   .advantages__main-wrap {
     flex-direction: row;
     justify-content: space-between;
-    .tab-container;
     margin-top: -47px;
     margin-bottom: var(--bottom-collapse);
   }
@@ -190,7 +193,6 @@
   .advantages__image-wrap {
     --phone-width: 86.5%;
     max-width: 280px;
-    // margin: 0;
   }
 
   .advantages__image-list {
@@ -220,6 +222,7 @@
 
 }
 
+
 @media (min-width: @desktop-width) {
 
   .advantages {
@@ -235,12 +238,7 @@
     );
   }
 
-  .advantages__intro-major {
-    .des-container;
-  }
-
   .advantages__main-wrap {
-    .des-container;
     flex-direction: column;
     width: auto;
     margin-top: -85px;
@@ -267,7 +265,6 @@
   }
 
   .advantages__list {
-    // Временно
     background-color: @theme-color-4;
 
     width: auto;
@@ -309,7 +306,7 @@
         height: 17px;
         margin-left: -147px;
         top: 0;
-      }
+      } // -------------------
     }
     &-title {
       font-size: inherit;

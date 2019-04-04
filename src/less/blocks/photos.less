@@ -1,0 +1,128 @@
+.photos {
+
+  &__wrapper {
+    .container;
+  }
+
+  &__item {
+    margin-bottom: @p-mob;
+
+    // Заглавная карточка
+    &-img-wrapper-main {
+
+      // пустить button-wrapper наверх
+      position: relative;
+
+      height: 44vw;
+      
+      // Расшириться за центровщик
+      position: relative;
+      width: 100vw;
+      left: 50%;
+      right: 50%;
+      margin-left: -50vw;
+      margin-right: -50vw;
+    }
+
+    &-main-button-wrapper {
+      position: relative;
+      z-index: 1;
+
+      width: 100%;
+    }
+
+    &-main-button {
+      padding: 0;
+
+      position: absolute;
+
+      background-color: @theme-color-2;
+
+      color: @theme-color-4;
+      text-transform: uppercase;
+      text-decoration: none;
+      font-weight: bold;
+      
+      display: block;
+      line-height: 36px;
+      padding-left: 20px;
+      padding-right: 20px;
+
+      top: 0;
+      right: 0;
+    }
+  }
+  
+  &__item:last-child {
+    margin-bottom: 0;
+  }
+
+  &--main {
+    width: 100%;
+  }
+}
+
+
+@media (min-width: @tablet-width) {
+  
+  .photos {
+  
+    &__wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    &__item {
+      margin-bottom: 3.2%;
+
+      &:nth-last-child(-n+2) {
+        margin-bottom: 0;
+      }
+
+      &-img-wrapper-main {
+        height: 77.2vw;
+      }
+      
+      &-main-button {
+        top: 55px;
+      }
+
+      &-description {
+        position: relative;
+      }
+
+      &-like-wrapper {
+        position: absolute;
+        right: 30px;
+        top: 28px;
+
+        display: flex;
+        justify-content: space-between;
+        width: 125px;
+      }
+
+      &--main {
+        width: 100%;
+      }
+    }
+  }
+}
+
+
+@media (min-width: @desktop-width) {
+  
+  .photos {
+
+    &__item {
+
+      &:nth-last-child(-n+3) {
+        margin-bottom: 0;
+      }
+
+      &--main {
+        width: 100%;
+      }
+    }
+  }
+}

@@ -1,19 +1,26 @@
 .prices {
   background-color: @theme-color-4;
-  // сдвиг под косую черту
-  margin-top: -25px;
+
   padding-top: 90px;
 
+  // сдвиг под косую черту
+  margin-top: -25px;
+
   &__wrapper {
-    .mob-container;
+    .container;
+
     overflow: hidden;
   }
   
   &__table {
     border-collapse: collapse;
-    // растянуть таблицу в три раза
+
+    // растянуть таблицу в три вьюпорта
     width: 300%;
+
+    // сдвиг на вторую ячейку
     margin-left: -100%;
+
     margin-bottom: 42px;
     text-transform: uppercase;
   }
@@ -42,7 +49,10 @@
       
       &::before {
         position: absolute;
+
         content: "Хит";
+        font-weight: normal;
+        font-size: 14px;
 
         left: -35px;
         top: 6px;
@@ -50,9 +60,7 @@
         height: 30px;
 
         background-color: @theme-color-2;
-        font-weight: normal;
-        font-size: 14px;
-
+        
         transform: rotate(-45deg);
       }
     }
@@ -68,26 +76,29 @@
   
   &__price {
     margin: 0;
+
     font-size: @base-font-size + 10;
     font-weight: 300;
   }
 
   &__td{
+    position: relative;
+
     background-color: @theme-color-5;
     border: 2px solid @price-table-border-color;
+
     width: 24.5%;
     height: 45px;
     padding-left: 15px;
     padding-right: 15px;
+
     line-height: 30px;
-    position: relative;
     
     &--option-name {
       text-align: left;
-      
     }
 
-    // Галочка включенных опций
+    // Метка включенных опций
     &--include::before,
     &--include::after {
       position: absolute;
@@ -107,7 +118,8 @@
       left: calc(94% - 12px);
       top: calc(15% + 14px);
     }
-    // Крест невключенных опций
+
+    // Метка невключенных опций
     &--exclude::before,
     &--exclude::after {
       position: absolute;
@@ -140,13 +152,11 @@
 
 }
 
+
 @media (min-width: @tablet-width) {
+  
   .prices {
     margin-top: -50px;
-
-    &__wrapper {
-      .tab-container;
-    }
     
     // Вписать таблицу в вьюпорт
     &__table {
@@ -162,7 +172,8 @@
     }
 
     &__td {
-      // Центровать галку
+
+      // Центровать метки опций
       &--include::before {
         right: auto;
         left: calc(50% - 11px);
@@ -173,7 +184,6 @@
         left: calc(50% - 12px);
         top: calc(15% + 14px);
       }
-      // Центровать крест
       &--exclude::before {
         right: auto;
         left: calc(50% - 18px);
@@ -185,10 +195,12 @@
         top: calc(10% + 1px);
       }
     }
+
     // Скрыть внутренние подписи
     &__inner-option-name {
       display: none;
     }
+
     // Скрыть переключатели слайдов
     &__toggles {
       display: none;
@@ -196,18 +208,17 @@
   }
 }
 
+
 @media (min-width: @desktop-width) {
+
   .prices {
+    padding-top: 146px;
+
     // сдвиг под косую черту
     margin-top: -85px;
-    padding-top: 146px;
 
     &__table {
       margin-bottom: 100px;
-    }
-
-    &__wrapper {
-      .des-container;
     }
   }
 }

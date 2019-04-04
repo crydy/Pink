@@ -1,0 +1,142 @@
+.photo-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  background-color: @theme-color-4;
+
+  &__img-wrapper {
+    // Пропорции относительно ширины
+    height: 56.25vw;
+
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: @theme-color-1-l;
+  }
+
+  &__img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__description {
+    padding: 18px 22px;
+  }
+
+  &__user-data {
+    .mp-clear;
+    margin-bottom: 5px;
+  }
+  &__author {
+    font-weight: bold;
+  }
+  
+  &__time {
+    text-transform: uppercase;
+    font-size: @base-font-size - 2;
+    font-weight: 300;
+  }
+  
+  &__user-text {
+    .mp-clear;
+    margin-bottom: 10px;
+  }
+  
+  &__like {
+    &-wrapper {
+      display: flex;
+      align-items: center;
+    }
+    &-button {
+      padding: 0;
+      margin-right: 20px;
+
+      border: none;
+      background-color: transparent;
+      display: flex;
+      width: 13px;
+      height: 12px;
+      
+      &:hover {
+        cursor: pointer;
+        --like-logo-color: @theme-color-1-l;
+      }
+      &:active {
+        --like-logo-color: @theme-color-2;
+        opacity: .3;
+      }
+    }
+    &-logo {
+      width: 13px;
+      height: 12px;
+      margin: auto;
+    }
+
+    &-text {
+      text-transform: uppercase;
+
+      user-select: none;
+      font-size: @base-font-size - 2;
+      color: @theme-color-2;
+      .mp-clear;
+    } 
+  }
+}
+
+
+@media (min-width: @tablet-width) {
+  
+  .photo-card {
+    width: 48.4%;
+
+    &__img-wrapper {
+      height: 45vw;
+    }
+
+    &__like-wrapper {
+      margin-top: auto;
+    }
+
+    &__description {
+      padding: 28px 30px;
+      
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+  
+    &__like {
+      &-wrapper {
+        justify-content: space-between;
+        padding-top: auto;
+      }
+      &-button {
+        order: 1;
+        margin-right: 0;
+      }
+    }
+  }
+
+}
+
+
+@media (min-width: @desktop-width) {
+  
+  .photo-card {
+    width: 31.25%;
+  
+    &__img-wrapper {
+      height: 41.6vw;
+      max-height: calc(@desktop-max-width * .43);
+
+      &--main {
+        height: 42.5vw;
+      }
+    }
+  }
+}

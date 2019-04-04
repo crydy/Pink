@@ -110,7 +110,7 @@ function goWatch() {
   watcherHTML.on('all', series(copyHTML, serverReload));
   watcherLESS.on('all', series(lessToCss, serverReload));
   watcherJS.on('all', series(copyJS, serverReload));
-  watcherIMG.on('all', series(parallel(copyIMG, createWEBP), serverReload));
+  watcherIMG.on('all', parallel(copyIMG, createWEBP));
   watcherSpriteSVG.on('all', series(copyHTML, serverReload));
 };
 
