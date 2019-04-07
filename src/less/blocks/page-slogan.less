@@ -6,6 +6,10 @@
   line-height: @base-line-height + 6;
   padding: 50px;
   text-align: center;
+
+  &__add {
+    display: none;
+  }
 }
 
 @media (min-width: @tablet-width) {
@@ -14,6 +18,10 @@
     padding-left: 18%;
     padding-right: 18%;
     font-size: @base-font-size + 4;
+
+    &__add {
+      display: block;
+    }
   }
 }
 @media (min-width: @desktop-width) {
@@ -21,5 +29,9 @@
   .page-slogan {
     padding-left: 24%;
     padding-right: 24%;
+    
+    &__add {
+      display: inline;
+    }
   }
 }

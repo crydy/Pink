@@ -1,14 +1,11 @@
 .photo-downloader {
   .container;
-  // outline: @r;
-
   background-color: @theme-color-4;
 
   &__picture {
 
     &-wrapper {
       border-top: .1px solid transparent;
-      // outline: @r;
     }
     
     &-img {
@@ -17,18 +14,14 @@
       height: 100%;
       object-fit: contain;
     }
-
   }
 
   &__form {
     
     &-list {
-      // outline: @r;
-
       .list-clear;
 
       &-item {
-        // outline: @g;
         display: flex;
         align-items: center;
         height: 114px;
@@ -37,11 +30,8 @@
 
         &-label {
           display: flex;
-
-          & svg {
-            // outline: @r;
-          }
         }
+
         &-range {
           margin: 0;
         }
@@ -61,8 +51,6 @@
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
-    // padding-top: 40px;
-    // padding-bottom: 40px;
   }
 
   &__button {
@@ -90,25 +78,24 @@
     }
     
     &:disabled {
-      color: @user-photo-downloader-inactive-icon;
-      border-color: @user-photo-downloader-inactive-icon;
+      color: @user-photo-downloader-inactive-button;
+      border-color: @user-photo-downloader-inactive-button;
       
       &:hover {
         color: @theme-color-5;
         background-color: transparent;
-        color: @user-photo-downloader-inactive-icon-hover;
-        border-color: @user-photo-downloader-inactive-icon-hover;
+        color: @user-photo-downloader-inactive-button-hover;
+        border-color: @user-photo-downloader-inactive-button-hover;
         cursor: inherit;
       }
       &:active { // не срабатывает в Blink, но работает в Gekko
-        color: @user-photo-downloader-inactive-icon;
-        background-color: @user-photo-downloader-inactive-icon-hover;
+        color: @user-photo-downloader-inactive-button;
+        background-color: @user-photo-downloader-inactive-button-hover;
         color: fade(@theme-color-5, 30%);
       }
     }
   }
 }
-
 
 
 // Стили только для мобильного
@@ -143,9 +130,16 @@
             --crop-icon-color: @user-photo-downloader-inactive-icon;
             --saturation-icon-color: @user-photo-downloader-inactive-icon;
             --brightness-icon-color: @user-photo-downloader-inactive-icon;
+            // ... и выделять по hover (кроме активной иконки)
+            &:not(.photo-downloader__form-list-item-label--active):hover {
+              cursor: pointer;
+              --crop-icon-color: @user-photo-downloader-inactive-icon-hover;
+              --saturation-icon-color: @user-photo-downloader-inactive-icon-hover;
+              --brightness-icon-color: @user-photo-downloader-inactive-icon-hover;
+            }
             
+            // вернуть окрас активной иконке
             &--active {
-              // вернуть окрас активной иконке
               --crop-icon-color: @theme-color-2;
               --saturation-icon-color: @theme-color-2;
               --brightness-icon-color: @theme-color-2;
@@ -161,6 +155,7 @@
               right: 12%;
             }
           }
+
           &-range {
            display: none;
 
@@ -183,11 +178,11 @@
         background-color: rgba(0, 0, 0, .1);
         top: 0;
         // раскинуть за границы контейнера
-        width: 100vw;
+        width: 96vw;
         left: 50%;
         right: 50%;
-        margin-left: -50vw;
-        margin-right: -50vw;
+        margin-left: -48vw;
+        margin-right: -48vw;
       }
     }
   }
@@ -210,9 +205,7 @@
 
     &__picture {
       &-wrapper {
-        // align-self: flex-start;
         width: 48.4%;
-        // max-width: 380px;
       }
       
       &-img {
