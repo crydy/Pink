@@ -18,7 +18,10 @@
 
     &-main-button-wrapper {
       position: relative;
-      width: 100%;
+      box-sizing: border-box;
+      margin-left: @p-mob;
+      margin-right: @p-mob;
+      background-color: @theme-color-4;
     }
 
     &-main-button {
@@ -85,6 +88,11 @@
         margin-bottom: 0;
       }
 
+      &-main-button-wrapper {
+        margin-left: @p-tab;
+        margin-right: @p-tab;
+      }
+
       &-main-img-wrapper {
         height: 77.2vw;
       }
@@ -126,6 +134,15 @@
       &:not(.photos__item--main):nth-last-child(-n+3) {
         margin-bottom: 0;
       }
+
+      &-main-button-wrapper {
+        margin-left: @p-des;
+        margin-right: @p-des;
+        width: calc(100% - (@p-des * 2));
+        max-width: @desktop-max-width;
+        margin: 0 auto;
+      }
+
 
       &-main-description {
         position: relative;
