@@ -67,9 +67,9 @@
   <!-- Основное содержимое -->
   <main class="page-main">
 
-    <div class="page-intro">
+    <p class="page-slogan">
       Взгляните на фотографии, которые выкладывают пользователи! Видите, как не хватает ваших?
-    </div>
+    </p>
 
     <!-- Карточки с фото -->
     <section class="photos">
@@ -268,34 +268,70 @@
       </div>
     </section>
 
+    <p class="page-slogan">
+      Затмите их всех!
+      Выкладывайте все, что накопилось в телефоне!
+    </p>
 
-    <!-- Загрузка фото -->
+    <!-- Блок загрузки юзерского фото -->
     <section class="photo-downloader">
       <h2 class="visually-hidden">Публикация вашего фото!</h2>
+      <div class="photo-downloader__wrapper">
 
-      <div class="photo-downloader__intro">
-        Затмите их всех!
-        Выкладывайте все, что накопилось в телефоне!
-      </div>
+        <!-- Изображение -->
+        <div class="photo-downloader__picture-wrapper">
+          <img class="photo-downloader__picture-img" src="img/send-photo.jpg" alt="Поле для отображения вашей фотографии">
+        </div>
 
-      <!-- Блок загрузки -->
-      <div class="photo-downloader__wrap">
-        <img class="photo-downloader__img" src="http://placehold.it/100x100" alt="Загрузите сюда свое изображение">
         <!-- Настройки фото -->
-        <form class="photo-downloader__user-form">
-          <fieldset class="photo-downloader__user-menu">
-            <legend class="visually-hidden">Настройки вашего изображения</legend>
+        <form class="photo-downloader__form">
+          <legend class="visually-hidden">Настройки вашего изображения</legend>
 
-            <label for="crop" aria-label="Кадрирование">Кадрирование</label>
-            <input type="range" id="crop">
-            <label for="saturation" aria-label="Насыщенность">Насыщенность</label>
-            <input type="range" id="saturation">
-            <label for="brightness" aria-label="Яркость">Яркость</label>
-            <input type="range" id="brightness">
+          <!-- Cписок настроек -->
+          <ul class="photo-downloader__form-list">
+            <li class="photo-downloader__form-list-item
+                        photo-downloader__form-list-item--active">
+              <label class="photo-downloader__form-list-item-label
+                            photo-downloader__form-list-item-label--active
+                            photo-downloader__form-list-item-label--crop" for="crop" aria-label="Кадрирование">
+                <svg width="50" height="50">
+                  <use xlink:href="#crop-icon">
+                </svg>
+              </label>
+              <input class="range
+                            photo-downloader__form-list-item-range
+                            photo-downloader__form-list-item-range--active" type="range" id="crop">
+            </li>
 
-            <button class="photo-downloader__button" type="submit">Запостить</button>
-            <button class="photo-downloader__button" type="reset" disabled>Отмена</button>
-          </fieldset>
+            <li class="photo-downloader__form-list-item">
+              <label class="photo-downloader__form-list-item-label
+                            photo-downloader__form-list-item-label--saturation" for="saturation" aria-label="Насыщенность">
+                <svg width="50" height="50">
+                  <use xlink:href="#saturation-icon">
+                </svg>
+              </label>
+              <input class="range
+                            photo-downloader__form-list-item-range" type="range" id="saturation">
+            </li>
+
+            <li class="photo-downloader__form-list-item">
+              <label class="photo-downloader__form-list-item-label
+                            photo-downloader__form-list-item-label--brightness" for="brightness" aria-label="Яркость">
+                <svg width="50" height="50">
+                  <use xlink:href="#brightness-icon">
+                </svg>
+              </label>
+              <input class="range
+                            photo-downloader__form-list-item-range" type="range" id="brightness">
+            </li>
+          </ul>
+
+          <!-- Блок кнопок -->
+          <div class="photo-downloader__buttons-wrapper">
+            <button class="photo-downloader__button button-1" type="submit">Запостить</button>
+            <button class="photo-downloader__button button-1" type="reset" disabled>Отмена</button>
+          </div>
+            
         </form>
 
       </div>

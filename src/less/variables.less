@@ -8,7 +8,8 @@
 @g: 1px dashed grey;
 @w: 1px dashed white;
 
-// -------- Цвета --------
+
+// ---------------------- Цвета -------------------------
 // основной синий
 @theme-color-1: #1d2631;
 // чуть светлей на кнопках и цвет текста
@@ -25,7 +26,6 @@
 
 // ховерные звездочки логотипа
 @logo-ornamentals-color: #76d1ec;
-
 // подложка навигации
 @nav-color: rgba(0, 0, 0, .3);
 // псевдотрехмерность кнопок main-nav - верхняя полоса
@@ -52,14 +52,20 @@
 @price-table-include-option: #3dc644;
 // Цвет галочек невключенных опций в таблице
 @price-table-exclude-option: #f25b26;
+// Цвет неактивных иконок в меню загрузки юзерского фото
+@user-photo-downloader-inactive-icon: #dddfe0;
+// Цвет неактивных иконок в меню загрузки юзерского фото при наведении
+@user-photo-downloader-inactive-icon-hover: #b5b9be;
 
-// Шрифт
+
+// ------------------------ Шрифт ---------------------------
 @base-font-family: 'Open Sans', Arial, Helvetica, sans-serif;
 @base-font-size: 14px;
 @base-line-height: 24px;
 @base-font-color: @theme-color-1-l;
 
-// Вьюпорты
+
+// ---------------- Вьюпорты -------------------
 @mibile-width: 320px;
 @tablet-width: 660px;
 @desktop-width: 1040px;
@@ -67,6 +73,7 @@
 // (также влияет на расчет высоты блока с картой
 // на особо крупном дисплее (блок contacts))
 @desktop-max-width: 1400px;
+
 
 //--- Паддинги ---
 // -мобильные
@@ -78,3 +85,38 @@
 
 
 
+// -------------- Умолчания для SVG -----------------
+:root {
+  // Окрас лого
+  --main-logo__text-color: @theme-color-5;
+  --main-logo__i-dot-color: @theme-color-2;
+
+  --main-logo__glasses-plain-color: @theme-color-5;
+
+  --main-logo__glasses-decorated-color: @theme-color-5;
+  --main-logo__ornamentals-color: @theme-color-2;
+
+  // Окрас таймера
+  --timer__body-color: @timer-body-color;
+  --timer__inner-line-color: @timer-inner-color;
+
+  // Окрас социальных кнопок
+  --twitter-logo-color: @theme-color-2;
+  --facebook-logo-color: @theme-color-2;
+  --youtube-logo-color: @theme-color-2;
+
+  // Окрас лого копирайта
+  --html-academy-logo-color: @theme-color-2;
+  
+  // Окрас значка лайка
+  --like-logo-color: @theme-color-2;
+
+  // Окрас иконок в блоке юзерской загрузки фото
+  --crop-icon-color: @theme-color-2;
+  --saturation-icon-color: @theme-color-2;
+  --brightness-icon-color: @theme-color-2;
+}
+
+body {
+  --m: calc(100%);
+}

@@ -1,0 +1,322 @@
+.photo-downloader {
+  .container;
+  // outline: @r;
+
+  background-color: @theme-color-4;
+
+  &__picture {
+
+    &-wrapper {
+      border-top: .1px solid transparent;
+      // outline: @r;
+    }
+    
+    &-img {
+      margin-top: @p-mob;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+  }
+
+  &__form {
+    
+    &-list {
+      // outline: @r;
+
+      .list-clear;
+
+      &-item {
+        // outline: @g;
+        display: flex;
+        align-items: center;
+        height: 114px;
+        padding-right: 20px;
+        border-bottom: 1px solid rgba(0, 0, 0, .1);
+
+        &-label {
+          display: flex;
+
+          & svg {
+            // outline: @r;
+          }
+        }
+        &-range {
+          margin: 0;
+        }
+      }
+    }
+    
+    &-menu {
+      .mp-clear;
+      border: none;
+    }
+  }
+
+  &__buttons-wrapper {
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    // padding-top: 40px;
+    // padding-bottom: 40px;
+  }
+
+  &__button {
+    color: @theme-color-2;
+    background-color: transparent;
+    border-color: @theme-color-2;
+    display: block;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 100%;
+    max-width: 400px;
+
+    &:not(:last-child) {
+      margin-bottom: 24px;
+    }
+
+    &:hover {
+      color: @theme-color-5;
+      background-color: @theme-color-2;
+      cursor: pointer;
+    }
+
+    &:active {
+      color: fade(@theme-color-5, 30%);
+    }
+    
+    &:disabled {
+      color: @user-photo-downloader-inactive-icon;
+      border-color: @user-photo-downloader-inactive-icon;
+      
+      &:hover {
+        color: @theme-color-5;
+        background-color: transparent;
+        color: @user-photo-downloader-inactive-icon-hover;
+        border-color: @user-photo-downloader-inactive-icon-hover;
+        cursor: inherit;
+      }
+      &:active { // не срабатывает в Blink, но работает в Gekko
+        color: @user-photo-downloader-inactive-icon;
+        background-color: @user-photo-downloader-inactive-icon-hover;
+        color: fade(@theme-color-5, 30%);
+      }
+    }
+  }
+}
+
+
+
+// Стили только для мобильного
+// (обеспечивают работу слайдера настроек)
+@media (max-width: (@tablet-width - 1)) {
+  
+  .photo-downloader {
+
+    &__form {
+      position: relative;
+      
+      &-list {
+        padding-top: 87px;
+  
+        &-item {
+          padding-left: 20px;
+          border-bottom: none;
+
+          // схлопнуть неактивные элементы
+          height: 0;
+          
+          &--active {
+            height: 114px;
+          }
+  
+          &-label {
+            display: flex;
+            position: absolute;
+            top: 40px;
+
+            // перекрасить неактивные иконки в слайдере
+            --crop-icon-color: @user-photo-downloader-inactive-icon;
+            --saturation-icon-color: @user-photo-downloader-inactive-icon;
+            --brightness-icon-color: @user-photo-downloader-inactive-icon;
+            
+            &--active {
+              // вернуть окрас активной иконке
+              --crop-icon-color: @theme-color-2;
+              --saturation-icon-color: @theme-color-2;
+              --brightness-icon-color: @theme-color-2;
+            }
+  
+            &--crop {
+              left: 12%;
+            }
+            &--saturation {
+              left: calc(50% - 25px);
+            }
+            &--brightness {
+              right: 12%;
+            }
+          }
+          &-range {
+           display: none;
+
+            &--active {
+              display: block;
+            }
+          }
+        }
+      }
+    }
+
+    &__buttons-wrapper {
+      position: relative;
+      
+      // полоса над блоком с кнопками
+      &::before {
+        position: absolute;
+        content: "";
+        height: 1px;
+        background-color: rgba(0, 0, 0, .1);
+        top: 0;
+        // раскинуть за границы контейнера
+        width: 100vw;
+        left: 50%;
+        right: 50%;
+        margin-left: -50vw;
+        margin-right: -50vw;
+      }
+    }
+  }
+}
+
+
+@media (min-width: @tablet-width) {
+  
+  .photo-downloader {
+    
+    &__wrapper {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: stretch;
+
+      padding-top: 55px;
+      padding-bottom: 55px;
+    }
+
+    &__picture {
+      &-wrapper {
+        // align-self: flex-start;
+        width: 48.4%;
+        // max-width: 380px;
+      }
+      
+      &-img {
+        margin-top: 0;
+      }
+    }
+    
+    &__form {
+      width: 44.35%;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      
+      &-list {
+        margin-bottom: 24px;
+        
+  
+        &-item {
+ 
+          &:first-child {
+            margin-top: -25px;
+          }
+  
+          &-label {
+            margin-right: 28px;
+            margin-left: 6px;
+            
+            & svg {
+              width: 28px;
+              height: 28px;
+              
+            }
+          }
+        }
+      }
+    }
+
+    &__buttons-wrapper {
+      min-height: auto;
+      justify-content: flex-end;
+    }
+  }
+}
+
+
+@media (min-width: @desktop-width) {
+  
+  .photo-downloader {
+    background-color: transparent;
+
+    &__wrapper {
+      background-color: @theme-color-4;
+    }
+
+    &__picture {
+      &-wrapper {
+        width: 32%;
+        margin-left: 8.5%;
+      }
+    }
+
+    &__form {
+      width: 43.6%;
+      padding-right: 6.4%;
+
+      &-list {
+  
+        &-item {
+ 
+          &:first-child {
+            margin-top: -30px;
+          }
+  
+          &-label {
+            margin-right: 40px;
+            margin-left: 0px;
+            
+            & svg {
+              width: 50px;
+              height: 50px;
+            }
+          }
+        }
+      }
+    }
+
+    &__buttons-wrapper {
+      flex-direction: row;
+      justify-content: center;
+    }
+
+    &__button {
+      width: auto;
+      min-width: 180px;
+      
+      &:not(:last-child) {
+        margin-bottom: 0;
+      }
+
+      &:not(:last-child) {
+        margin-right: 10.7%;
+      }
+    }
+  }
+}

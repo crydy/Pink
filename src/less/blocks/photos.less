@@ -10,18 +10,16 @@
     // Заглавная карточка
     &-img-wrapper-main {
 
-      // пустить button-wrapper наверх
-      position: relative;
-
       height: 44vw;
       
       // Расшириться за центровщик
       position: relative;
-      width: 100vw;
+      width: 99.18vw;
       left: 50%;
       right: 50%;
       margin-left: -50vw;
       margin-right: -50vw;
+      
     }
 
     &-main-button-wrapper {
@@ -50,6 +48,14 @@
 
       top: 0;
       right: 0;
+
+      &:hover {
+        background-color: @theme-color-4;
+        color: @theme-color-2;
+      }
+      &:active {
+        color: fade(@theme-color-2, 30%);
+      }
     }
   }
   
