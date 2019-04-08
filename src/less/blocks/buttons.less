@@ -1,0 +1,49 @@
+.button-1 {
+  display: inline-block;
+  box-sizing: border-box;
+  
+  color: inherit;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: @base-font-size + 4;
+  line-height: 46px;
+
+  border: 3px solid @theme-color-4;
+  border-radius: 30px;
+}
+
+.button-2 {
+  display: inline-block;
+  box-sizing: border-box;
+  
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: @base-font-size + 4;
+  line-height: 60px;
+
+  border: 3px solid @theme-color-4;
+  border-radius: 5px;
+
+  text-align: center;
+
+  padding-left: 15px;
+  padding-right: 15px;
+
+  color: @form-submit-button-text-color;
+  background-color: @form-submit-button-color;
+  
+  &:hover,
+  &:focus {
+    cursor: pointer;
+    background-color: @form-submit-button-color-hover;
+    outline: none;
+  }
+  &:active {
+    color: @form-submit-button-text-color-active;
+  }
+  &:disabled {
+    color: @form-submit-button-text-color;
+    background-color: @form-submit-button-color-disabled;
+  }
+}
