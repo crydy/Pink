@@ -26,6 +26,7 @@
   &__input {
     height: 64px;
     padding-left: 20px;
+    box-sizing: border-box;
 
     line-height: @base-line-height + 6;
     font-size: @base-font-size + 6;
@@ -116,6 +117,10 @@
 
       &:not(:last-child) {
         margin-bottom: 15px;
+      }
+
+      &-icon {
+        display: none;
       }
     }
   }
@@ -274,13 +279,52 @@
       &-item {
         display: flex;
         flex-direction: column;
+        position: relative;
 
         & input {
           order: -1;
+          padding-right: 84px
         }
         & label {
           margin-bottom: 15px;
+        }
+
+        &-icon {
+          display: flex;
+
+          position: absolute;
+          right: 0;
+          top: 0;
+
+          width: 64px;
+          height: 64px;
           
+          background-color: @user-form-border-color;
+          --phone-icon-color: @theme-color-2;
+          --email-icon-color: @theme-color-2;
+          
+          &-svg {
+            margin: auto;
+            width: 23px;
+            height: 23px;
+          }
+        }
+
+        &:hover .user-form__contacts-item-icon {
+          background-color: @theme-color-1-l;
+          --phone-icon-color: @theme-color-4;
+          --email-icon-color: @theme-color-4;
+        }
+        &:focus-within .user-form__contacts-item-icon {
+          background-color: @theme-color-2;
+          --phone-icon-color: @theme-color-1-l;
+          --email-icon-color: @theme-color-1-l;
+        }
+        &:hover .user-form__input {
+          border-color: @theme-color-1-l;
+        }
+        &:focus-within .user-form__input {
+          border-color: @theme-color-2;
         }
       }
     }
