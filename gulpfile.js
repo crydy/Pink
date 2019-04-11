@@ -120,7 +120,8 @@ function startServer(cb) {
   server.init({
     server: {
       baseDir: "./build/"
-    }
+    },
+    notify: false
   });
   cb();
 };

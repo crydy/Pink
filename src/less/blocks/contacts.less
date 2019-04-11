@@ -81,7 +81,9 @@
     }
 
     &__list {
-      justify-content: space-evenly;
+      justify-content: space-between;
+      padding-left: 12%;
+      padding-right: 12%;
 
       &-item {
         box-sizing: border-box;
@@ -104,19 +106,19 @@
 .contacts {
 
   &__map-wrapper {
+    position: relative;
     height: 62.5vw;
     min-height: 100vh;
     
     background: url(../img/map-image.png) 50% 50% no-repeat;
-  
-    // подрезать под треугольник сверху
-    clip-path: polygon(
-      50% 10%,
-      100% 0,
-      100% 100%,
-      0 100%,
-      0 0
-    );
+
+    // Треугольная челка над картой
+    &-clip {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height: 10%;
+    }
   }
 
   &__map {
@@ -132,13 +134,9 @@
     min-height: auto;
     height: 56vw;
 
-    clip-path: polygon(
-      50% 20%,
-      100% 0,
-      100% 100%,
-      0 100%,
-      0 0
-    );
+    &-clip {
+      height: 20%;
+    }
   }
 }
 

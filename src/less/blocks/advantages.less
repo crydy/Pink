@@ -5,18 +5,32 @@
   border-top: 1px solid transparent;
 
   background-color: @theme-color-4;
+
+  // Предотвратить перекрытие текста
+  // на экране смартфона на слишком узком экране
+  @media (max-width: 440px) {
+    --bottom-collapse: -50px;
+  }
 }
 
 .advantages__intro {
   position: relative;
   
   // Скос внизу блока
-  clip-path: polygon(
-    0 0,
-    100% 0,
-    100% 90%,
-    0 100%
-  );
+  // clip-path: polygon(
+  //   0 0,
+  //   100% 0,
+  //   100% 90%,
+  //   0 100%
+  // );
+
+  &-clip {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 35px;
+  }
 
   background-color: @theme-color-5;
 
@@ -168,12 +182,9 @@
   .advantages__intro {
     padding-bottom: 60px;
 
-    clip-path: polygon(
-      0 0,
-      100% 0,
-      100% 80%,
-      0 100%
-    );
+    &-clip {
+      height: 50px;
+    }
 
     &-minor {
       display: inline;
@@ -230,12 +241,10 @@
   }
 
   .advantages__intro {
-    clip-path: polygon(
-      0 0,
-      100% 0,
-      100% 75%,
-      0 100%
-    );
+
+    &-clip {
+      height: 95px;
+    }
   }
 
   .advantages__main-wrap {

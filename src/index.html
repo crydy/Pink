@@ -108,6 +108,11 @@
       <h2 class="visually-hidden">Преимущества и особенности приложения Pink</h2>
       <div class="advantages__intro">
         <p class="advantages__intro-major">Устали от серости мегаполиса?<br><span class="advantages__intro-minor">Нам есть, что вам <br class="advantages__intro-minor-break">предложить!</span></p>
+
+      <!-- SVG-псевдо-clip-path для поддержки Edge -->
+      <svg class="advantages__intro-clip">
+        <use xlink:href="#clip-skew">
+      </svg>
       </div>
 
       <div class="advantages__main-wrap">
@@ -204,8 +209,12 @@
         <button class="reviews__toggles-desktop reviews__toggles-desktop--left" type="button" aria-label="Показать предыдущий отзыв"></button>
         <button class="reviews__toggles-desktop reviews__toggles-desktop--right" type="button" aria-label="Показать следующий отзыв"></button>
       </div>
-
-
+      
+      <!-- SVG-псевдо-clip-path для поддержки Edge -->
+      <svg class="reviews-clip">
+        <use xlink:href="#clip-skew">
+      </svg>
+      
     </section>
 
     <!-- Цены -->
@@ -307,7 +316,13 @@
 
       <!-- Карта -->
       <div class="contacts__map-wrapper">
+
         <!-- <iframe class="contacts__map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1998.603728544154!2d30.320858716322096!3d59.93871648187625!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4696310fca145cc1%3A0x42b32648d8238007!2z0JHQvtC70YzRiNCw0Y8g0JrQvtC90Y7RiNC10L3QvdCw0Y8g0YPQuy4sIDE5LzgsINCh0LDQvdC60YIt0J_QtdGC0LXRgNCx0YPRgNCzLCAxOTExODY!5e0!3m2!1sru!2sru!4v1554195205002!5m2!1sru!2sru" frameborder="0" style="border:0" allowfullscreen></iframe> -->
+
+        <!-- SVG-превдо-clip-path для поддержки Edge -->
+        <svg class="contacts__map-wrapper-clip">
+          <use xlink:href="#clip-top-triangle">
+        </svg>
       </div>
     </section>
   </main>

@@ -1,10 +1,7 @@
 .prices {
   background-color: @theme-color-4;
 
-  padding-top: 90px;
-
-  // сдвиг под косую черту
-  margin-top: -25px;
+  padding-top: 65px;
 
   &__wrapper {
     .container;
@@ -35,7 +32,6 @@
     background-color: @price-table-th-color;
 
     border: 2px solid @theme-color-4;
-    border-bottom-color: transparent;
     
     color: @theme-color-5;
     line-height: @base-line-height + 6;
@@ -46,6 +42,7 @@
     &--hit {
       position: relative;
       overflow: hidden;
+      background-clip: padding-box; // не распухать в Edge
       
       &::before {
         position: absolute;
@@ -83,6 +80,7 @@
 
   &__td{
     position: relative;
+    background-clip: padding-box; // не распухать в Edge
 
     background-color: @theme-color-5;
     border: 2px solid @price-table-border-color;
@@ -156,7 +154,7 @@
 @media (min-width: @tablet-width) {
   
   .prices {
-    margin-top: -50px;
+    padding-top: 30px;
     
     // Вписать таблицу в вьюпорт
     &__table {
@@ -212,10 +210,7 @@
 @media (min-width: @desktop-width) {
 
   .prices {
-    padding-top: 146px;
-
-    // сдвиг под косую черту
-    margin-top: -85px;
+    padding-top: 60px;
 
     &__table {
       margin-bottom: 100px;

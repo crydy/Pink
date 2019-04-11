@@ -85,4 +85,14 @@
       <path d="M14.91,1.81c1.2-1,.9-1.81-.66-1.81H3.73C2.17,0,1.88.82,3.07,1.81L6.82,4.93a3.54,3.54,0,0,0,4.35,0Z" fill="var(--email-icon-color)"/>
       <path  d="M11.91,7,9.7,8.88h0A1,1,0,0,1,9.44,9l-.1,0A1.13,1.13,0,0,1,9,9.14H9a1.2,1.2,0,0,1-.33-.06l-.1,0a1.05,1.05,0,0,1-.23-.14h0L6.08,7,2.18,3.8C1,2.8,0,3.26,0,4.82v6.32A2.84,2.84,0,0,0,2.83,14H15.15A2.84,2.84,0,0,0,18,11.13V4.82c0-1.56-1-2-2.18-1Z" fill="var(--email-icon-color)"/>
     </symbol>
+
+    <!--              SVG-костыли имитации clip-path для поддержки Edge              -->
+    <!-- Треугольная челка -->
+    <svg id="clip-top-triangle" viewBox="0 0 100 100" preserveAspectRatio="none">
+      <polygon fill="var(--clip-top-triangle-color)" points="0,0 50,100 100,0"/>
+    </svg>
+    <!-- Косой подрез правого угла снизу -->
+    <svg id="clip-skew" viewBox="0 0 100 100" preserveAspectRatio="none">
+      <polygon fill="var(--clip-skew-color)" points="100,100 0,100 100,0"/>
+    </svg>
   </svg>
