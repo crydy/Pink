@@ -15,14 +15,6 @@
 
 .advantages__intro {
   position: relative;
-  
-  // Скос внизу блока
-  // clip-path: polygon(
-  //   0 0,
-  //   100% 0,
-  //   100% 90%,
-  //   0 100%
-  // );
 
   &-clip {
     position: absolute;
@@ -84,7 +76,7 @@
   // положение экрана телефона
   --phone-screen-left: 5.8%;
   --phone-screen-right: 5.8%;
-  --phone-screen-top: 11.5%;
+  --phone-screen-top: 10%;
   --phone-screen-bottom: 13.5%;
 
   // картинка на экране
@@ -100,12 +92,19 @@
     background: url(../img/phone-bg.jpg) 50% 50% no-repeat;
     background-size: cover;
   } // -------------------
-
+  
   // заполнение цветом
   &--color::before,
-  &--smile::before {    
-    background-color: @theme-color-2;
-    background-blend-mode: luminosity;
+  &--smile::before {
+    @supports (background-blend-mode: hard-light) {
+      background-color: @theme-color-2;
+      background-blend-mode: hard-light;
+    }
+    // Фоллбэк для Edge
+    @supports not (background-blend-mode: hard-light) {
+      background: url(../img/phone-bg--colored.jpg) 50% 50% no-repeat;
+      background-size: cover;
+    }
   } // -------------------------------
 
   // --------- текст и смайл ---------

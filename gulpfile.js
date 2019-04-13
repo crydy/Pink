@@ -1,15 +1,18 @@
 const { series, parallel, src, dest, watch } = require('gulp'),
-      less = require('gulp-less'),                 // препроцессор CSS
-      plumber = require('gulp-plumber'),           // ловец ошибок в watch
-      posthtml = require('gulp-posthtml'),         // подцеплен только для posthtml-include
-      include = require('posthtml-include'),       // используется для интеграции SVG-спрайта
-      postcss = require('gulp-postcss'),           // подцеплен только для autoprefixer
-      autoprefixer = require('autoprefixer'),      // авторасстановка вендерных префиксов
-      minify = require('gulp-csso'),               // минимизатор CSS
-      rename = require('gulp-rename'),             // переименование в Gulp
-      rm = require('gulp-rm'),                     // удаление в Gulp
-      imagemin = require('gulp-imagemin'),         // оптимизатор изображений
-      webp = require('gulp-webp'),                 // создатель webp-копий изображений
+      plumber = require('gulp-plumber'),           // gulp: ловец ошибок в watch
+      rename = require('gulp-rename'),             // gulp: переименование в Gulp
+      rm = require('gulp-rm'),                     // gulp: удаление в Gulp
+      posthtml = require('gulp-posthtml'),         // html: подцеплен для функционирования posthtml-include
+      include = require('posthtml-include'),       // html: используется для интеграции SVG-спрайта
+      less = require('gulp-less'),                 // css: препроцессор CSS
+      postcss = require('gulp-postcss'),           // css: подцеплен для autoprefixer
+      autoprefixer = require('autoprefixer'),      // css: авторасстановка вендерных префиксов
+      minify = require('gulp-csso'),               // css: минимизатор CSS
+      imagemin = require('gulp-imagemin'),         // img: оптимизатор изображений
+      webp = require('gulp-webp'),                 // img: создатель webp-копий изображений
+      babel = require('gulp-babel'),               // js: JS-транспайлер и полифил (< ES2015)
+      terser = require('gulp-terser'),             // js: JS-минификатор
+      concat = require('gulp-concat'),             // конкатенация файлов
       server = require('browser-sync').create();   // живой сервер
 
 
@@ -28,7 +31,7 @@ const message = {
   },
   consoleCopyJS : function() {
     console.log('---                                                         ---');
-    console.log('-                    Copy JS >>> build/js                     -');
+    console.log('-        JS copy & concat & compress >>> build/all.js         -');
     console.log('---                                                         ---');
   },
   consoleLESStoCSS : function() {
@@ -38,7 +41,7 @@ const message = {
   },
   consoleCopyIMG : function() {
     console.log('---                                                         ---');
-    console.log('-            Copy & optimisation IMG >>> build/img            -');
+    console.log('-          Images copy & optimisation >>> build/img           -');
     console.log('---                                                         ---');
   },
   consoleCreateWEBP : function() {
@@ -48,7 +51,7 @@ const message = {
   },
   consoleCopyFonts : function() {
     console.log('---                                                         ---');
-    console.log('-        Copy fonts (woff, woff2) >>> build/img/webp          -');
+    console.log('-          Fonts copy (woff, woff2) >>> build/fonts           -');
     console.log('---                                                         ---');
   },
   consoleClearBuild : function() {
@@ -148,7 +151,14 @@ function copyHTML() {
 function copyJS() {
   message.consoleCopyJS();
   return src('src/js/**/*.js')
-    .pipe(dest('build/js'));
+  .pipe(dest('build/js'))
+  .pipe(concat('all.js'))
+  .pipe(babel())
+  .pipe(terser({
+    keep_fnames: true,
+    mangle: false
+  }))
+  .pipe(dest('build/js'));
 };
 
 // Компилировать LESS в CSS

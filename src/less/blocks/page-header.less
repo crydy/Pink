@@ -1,7 +1,14 @@
 .page-header {
-  background: url(../img/bg-header.jpg) 50% 260px no-repeat;
-  background-color: darken(@theme-color-1, 50%);
-  background-blend-mode: luminosity;
+
+  @supports (background-blend-mode: hard-light) {
+    background: url(../img/bg-header.jpg) 50% 260px no-repeat;
+    background-color: @theme-color-1;
+    background-blend-mode: hard-light;
+  }
+  
+  // Фоллбэк для Edge
+  background: url(../img/bg-header--colored.jpg) 50% 260px no-repeat;
+  background-color: @theme-color-1;
 }
 
 @media (min-width: @desktop-width) {

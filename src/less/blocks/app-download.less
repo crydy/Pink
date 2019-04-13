@@ -29,10 +29,18 @@
       height: 187px;
       right: calc(var(--hand-right-padding) + 40px);
       bottom: 82px;
-      background: url(../img/bg-header.jpg) 50% 0 no-repeat;
+
+      @supports (background-blend-mode: luminosity) {
+        background: url(../img/bg-header.jpg) 50% 0 no-repeat;
+        background-size: auto 120%;
+        background-color: @theme-color-2;
+        background-blend-mode: luminosity;
+      }
+
+      // Фоллбэк для Edge      
+      background: url(../img/bg-header--colored-pink.jpg) 50% 0 no-repeat;
       background-size: auto 120%;
       background-color: @theme-color-2;
-      background-blend-mode: luminosity;
     }
   }
 
