@@ -12,9 +12,9 @@
   // Брейкпоинт на десктопную версию
   const desktopWidth = parseInt(
     getComputedStyle(
-      document.querySelector(':root'))
-              .getPropertyValue('--desktop-width')
-    );
+      document.querySelector(':root')
+    ).getPropertyValue('--desktop-width')
+  );
 
   // Загрузились на десктопе?
   let startInDesktop = (window.innerWidth >= desktopWidth) ? true : false;

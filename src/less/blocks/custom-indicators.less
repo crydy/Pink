@@ -169,6 +169,11 @@
 @label-padding: @checkbox-body-width + 15px;
 
 
+// ---- Задержка цветового перехода ----
+
+@custom-indicator-transition-duration: @base-transition-duration;
+
+
 // Лейбл
 .custom-indicator-label {
   display: @label-display-value;
@@ -197,6 +202,8 @@
   border-radius: @checkbox-body-border-radius;
 
   background-color: @checkbox-fill-color;
+
+  transition-duration: @custom-indicator-transition-duration;
 }
 .custom-indicator-label input[type="checkbox"]:hover + .checkbox-indicator,
 .custom-indicator-label input[type="checkbox"]:focus + .checkbox-indicator {
@@ -260,6 +267,8 @@
   border-radius: @radio-body-border-radius;
 
   background-color: @radio-fill-color;
+
+  transition-duration: @custom-indicator-transition-duration;
 }
 .custom-indicator-label input[type="radio"]:hover + .radio-indicator,
 .custom-indicator-label input[type="radio"]:focus + .radio-indicator {
