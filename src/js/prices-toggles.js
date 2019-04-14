@@ -3,10 +3,13 @@
 // Переключение столбцов таблицы в мобильной версии
 (function(){
 
+    // Если блока с отзывами не существует - ничего не выполнять.
+    if(!document.querySelector('.prices')) return;
+
     const buttonBlock = document.querySelector('.prices__toggles'),
           buttons = buttonBlock.querySelectorAll('.slider-toggles__item'),
           table = document.querySelector('.prices__table');
-      let numButton = 0;
+      let numButton = 1; // по умолчанию открыта средняя колонка
 
     // Брейкпоинт на планшетную версию
     const tabletWidth = parseInt(
@@ -26,7 +29,7 @@
         numButton = evt.target.getAttribute('data-number');
     
         // удалить выделение со всех кнопок
-        for(let button of buttons) {
+        for (let button of buttons) {
           button.classList.remove('slider-toggles__item--active');
         };
         // ... и добавить активной кнопке
