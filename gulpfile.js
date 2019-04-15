@@ -94,6 +94,8 @@ exports.build = series(clearBuild, // очистить build
                   startServer, // запустить сервер для проверки (без прослушки ФС)
                   function() { message.consoleRebuild() } // сообщить о завершении
                 );
+// Скопировать сборку в gh-pages
+exports.publish = ghPages;
 
 
 // ---------------------------------------------------------
@@ -196,18 +198,24 @@ function createWEBP() {
   return src('src/img/**/*.{png,jpg,jpeg}')
     .pipe(webp({quality: 90}))
     .pipe(dest('build/img/webp'));
-}
+};
 
 // Копировать шрифты
 function copyFonts() {
   message.consoleCopyFonts();
   return src('src/fonts/**/*.{woff,woff2}')
     .pipe(dest('build/fonts'));
-}
+};
 
 // Полная очистка сборки
 function clearBuild() {
   message.consoleClearBuild();
   return src('build/**/*', {read: false})
     .pipe(rm());
-}
+};
+
+// копирование на gh-pages
+function ghPages() {
+  return src('build/**/*')
+    .pipe(dest('docs'));
+};
