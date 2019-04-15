@@ -63,6 +63,11 @@ const message = {
     console.log('---                                                         ---');
     console.log('-          !!!    Project rebuild is complete    !!!          -');
     console.log('---                                                         ---');
+  },
+  consolePublish : function() {
+    console.log('---                                                         ---');
+    console.log('-      Copy build for GitHub hosting / build >>> docs         -');
+    console.log('---                                                         ---');
   }
 }
 
@@ -84,18 +89,18 @@ exports.default = series(startServer, goWatch);
 // Полная пересборка проекта
 exports.build = series(clearBuild, // очистить build
                   parallel(
-                    copyHTML, // скопировать все html, заинлайнив sprite.svg через include
-                    lessToCss, // компилировать css из less, с автопрефиксами и минимизацией
-                    copyJS, // скопировать js-файлы
-                    copyFonts, // скопировать шрифты
-                    copyIMG, // скопировать изображения с оптимизацией
-                    createWEBP, // создать webp-копии изображений в отдельный каталог
+                    copyHTML,      // скопировать все html, заинлайнив sprite.svg через include
+                    lessToCss,     // компилировать css из less, с автопрефиксами и минимизацией
+                    copyJS,        // скопировать js-файлы
+                    copyFonts,     // скопировать шрифты
+                    copyIMG,       // скопировать изображения с оптимизацией
+                    createWEBP,    // создать webp-копии изображений в отдельный каталог
                   ),
-                  startServer, // запустить сервер для проверки (без прослушки ФС)
+                  clearDocs,       // почистить директорию docs
+                  copyOnGHPages,   // cкопировать сборку в docs для хостинга на GitHub
+                  startServer,     // запустить сервер для проверки (без прослушки ФС)
                   function() { message.consoleRebuild() } // сообщить о завершении
                 );
-// Скопировать сборку в gh-pages
-exports.publish = ghPages;
 
 
 // ---------------------------------------------------------
@@ -149,7 +154,8 @@ function copyHTML() {
     .pipe(dest('build'));
 };
 
-// Скопировать JS
+// Скопировать JS с транспиляцией,
+// минификацией и объединением в all.js
 function copyJS() {
   message.consoleCopyJS();
   return src('src/js/**/*.js')
@@ -214,8 +220,15 @@ function clearBuild() {
     .pipe(rm());
 };
 
-// копирование на gh-pages
-function ghPages() {
+// копирование сборки для gh-pages
+function copyOnGHPages() {
+  message.consolePublish();
   return src('build/**/*')
     .pipe(dest('docs'));
+};
+
+// Очистка docs
+function clearDocs() {
+  return src('docs/**/*', {read: false})
+    .pipe(rm());
 };
