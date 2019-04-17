@@ -83,6 +83,16 @@
 
     &__link {
       color: @theme-color-2;
+      width: fit-content;
+
+      &:hover,
+      &:focus {
+        text-decoration: none;
+        outline: 1px dotted @theme-color-2;
+      }
+      &:active {
+        color: @theme-color-1-l;
+      }
     }
   }
 

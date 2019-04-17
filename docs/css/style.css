@@ -257,7 +257,9 @@ textarea:focus:-ms-input-placeholder {
   border-radius: 50%;
   transition-duration: 0.2s;
 }
-.social__link:hover {
+.social__link:hover,
+.social__link:focus {
+  outline: none;
   border-color: #283645;
 }
 .social__link:active {
@@ -312,6 +314,9 @@ textarea:focus:-ms-input-placeholder {
 }
 .range:focus {
   outline: none;
+}
+.range:focus::-webkit-slider-thumb {
+  background: #d22856;
 }
 .range::-webkit-slider-runnable-track {
   width: 100%;
@@ -497,8 +502,10 @@ textarea:focus:-ms-input-placeholder {
           user-select: none;
   cursor: inherit;
 }
-.site-list__link[href]:hover {
+.site-list__link[href]:hover,
+.site-list__link[href]:focus {
   color: #d22856;
+  outline: none;
 }
 .site-list__link[href]:active {
   color: #d22856;
@@ -522,8 +529,10 @@ textarea:focus:-ms-input-placeholder {
   --main-logo__glasses-decoraged-display-value: none;
   --main-logo__i-dot-display-value: none;
 }
-.site-list__logo-image:not(.site-list__logo-image--index-page):hover {
+.site-list__logo-image:not(.site-list__logo-image--index-page):hover,
+.site-list__logo-image:not(.site-list__logo-image--index-page):focus {
   cursor: pointer;
+  outline: none;
   --main-logo__text-color: #d22856;
   --main-logo__glasses-decorated-color: #d22856;
   --main-logo__glasses-plain-color: #d22856;
@@ -742,6 +751,14 @@ textarea:focus:-ms-input-placeholder {
   display: flex;
   margin-bottom: 40px;
 }
+.page-footer__logo:focus {
+  outline: none;
+}
+.page-footer__logo:focus > .page-footer__logo-image {
+  --main-logo__text-color: #d22856;
+  --main-logo__ornamentals-color: #76d1ec;
+  --main-logo__ornamentals-color: #d22856;
+}
 .page-footer__logo-image {
   margin: auto;
   --main-logo__text-color: #000000;
@@ -787,7 +804,17 @@ textarea:focus:-ms-input-placeholder {
 .page-footer__copyright-link:hover {
   --html-academy-logo-color: #283645;
 }
+.page-footer__copyright-link:focus {
+  outline: none;
+  color: #d22856;
+}
+.page-footer__copyright-link:focus > .page-footer__copyright-icon {
+  --html-academy-logo-color: #283645;
+}
 .page-footer__copyright-link:active {
+  color: #b3b3b3;
+}
+.page-footer__copyright-link:active > .page-footer__copyright-icon {
   --html-academy-logo-color: #b3b3b3;
 }
 .page-footer__copyright-icon {
@@ -916,7 +943,9 @@ textarea:focus:-ms-input-placeholder {
 .app-download__main-button {
   width: 280px;
 }
-.app-download__main-button:hover {
+.app-download__main-button:hover,
+.app-download__main-button:focus {
+  outline: none;
   background-color: #f2f2f2;
   color: #d22856;
 }
@@ -1347,6 +1376,17 @@ textarea:focus:-ms-input-placeholder {
   }
   .effect__link {
     color: #d22856;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+  .effect__link:hover,
+  .effect__link:focus {
+    text-decoration: none;
+    outline: 1px dotted #d22856;
+  }
+  .effect__link:active {
+    color: #283645;
   }
 }
 @media (min-width: 660px) and (min-width: 660px) {
@@ -1405,6 +1445,7 @@ textarea:focus:-ms-input-placeholder {
 .reviews__wrapper {
   padding-left: 20px;
   padding-right: 20px;
+  overflow: hidden;
   padding-top: 50px;
   padding-bottom: 42px;
 }
@@ -1426,10 +1467,17 @@ textarea:focus:-ms-input-placeholder {
   margin: 0;
   padding: 0;
   list-style: none;
-  padding-bottom: 40px;
+  width: 300%;
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  transition-duration: 0.5s;
 }
-.reviews__item:not(.reviews__item--active) {
-  display: none;
+.reviews__item {
+  width: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 .reviews__blockquote {
   display: flex;
@@ -1465,6 +1513,10 @@ textarea:focus:-ms-input-placeholder {
   }
   .reviews__wrapper {
     padding-top: 0;
+  }
+  .reviews__item {
+    padding-left: 20px;
+    padding-right: 20px;
   }
   .reviews__text {
     font-size: 18px;
@@ -1502,6 +1554,10 @@ textarea:focus:-ms-input-placeholder {
     left: calc(50% - 40px);
     background: url(../img/quotes.svg) 50% 50% no-repeat;
   }
+  .reviews__item {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
   .reviews__blockquote {
     margin-left: 13%;
     margin-right: 13%;
@@ -1525,6 +1581,10 @@ textarea:focus:-ms-input-placeholder {
     border: 0;
     padding: 0;
     background-color: transparent;
+  }
+  .reviews__toggles-desktop:focus,
+  .reviews__toggles-desktop:active {
+    outline: none;
   }
   .reviews__toggles-desktop--left {
     left: 10px;
@@ -1558,11 +1618,15 @@ textarea:focus:-ms-input-placeholder {
     cursor: pointer;
   }
   .reviews__toggles-desktop:hover::before,
-  .reviews__toggles-desktop:hover::after {
+  .reviews__toggles-desktop:hover::after,
+  .reviews__toggles-desktop:focus::before,
+  .reviews__toggles-desktop:focus::after {
+    width: 3px;
     background-color: #7e868f;
   }
   .reviews__toggles-desktop:active::before,
   .reviews__toggles-desktop:active::after {
+    width: 3px;
     background-color: #e9ebec;
   }
 }
@@ -2045,7 +2109,9 @@ textarea:focus:-ms-input-placeholder {
   right: 0;
   transition-duration: 0.2s;
 }
-.photos__item-main-button:hover {
+.photos__item-main-button:hover,
+.photos__item-main-button:focus {
+  outline: none;
   background-color: #f2f2f2;
   color: #d22856;
 }
@@ -2197,7 +2263,9 @@ textarea:focus:-ms-input-placeholder {
 .photo-downloader__button:not(:last-child) {
   margin-bottom: 24px;
 }
-.photo-downloader__button:hover {
+.photo-downloader__button:hover,
+.photo-downloader__button:focus {
+  outline: none;
   color: #ffffff;
   background-color: #d22856;
   cursor: pointer;

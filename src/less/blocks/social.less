@@ -21,7 +21,9 @@
 
     transition-duration: @base-transition-duration;
 
-    &:hover {
+    &:hover,
+    &:focus {
+      outline: none;
       border-color: @theme-color-1-l;
     }
     &:active {

@@ -7,6 +7,7 @@
   if(!document.querySelector('.reviews__wrapper')) return;
 
   const block = document.querySelector('.reviews__wrapper'),
+        list = block.querySelector('.reviews__list'),
         reviews = block.querySelectorAll('.reviews__item'),
         buttons = block.querySelectorAll('.slider-toggles__item');
 
@@ -31,12 +32,16 @@
           if (i + 1 == reviews.length) {
             reviews[0].classList.add('reviews__item--active');
             buttons[0].classList.add('slider-toggles__item--active');
+            // сдвинуть слайдер
+            list.style.marginLeft = `0`;
             return;
           };
 
           // если нет, активировать следующий за найденным
           reviews[i + 1].classList.add('reviews__item--active');
           buttons[i + 1].classList.add('slider-toggles__item--active');
+          // сдвинуть слайдер
+          list.style.marginLeft = `-${i + 1}00%`;
           return;
 
         } else { // листаем вперед
@@ -45,12 +50,16 @@
           if (i == 0) {
             reviews[reviews.length - 1].classList.add('reviews__item--active');
             buttons[reviews.length - 1].classList.add('slider-toggles__item--active');
+            // сдвинуть слайдер
+            list.style.marginLeft = `-${reviews.length - 1}00%`;
             return;
           };
 
           // если нет, активировать предыдущий
           reviews[i - 1].classList.add('reviews__item--active');
           buttons[i - 1].classList.add('slider-toggles__item--active');
+          // сдвинуть слайдер
+          list.style.marginLeft = `-${i - 1}00%`;
           return;
         }
       }
@@ -75,12 +84,15 @@
       // ... и добавить активной кнопке
       buttons[numButton].classList.add('slider-toggles__item--active');
       
-      // выключить все отзывы
+      // деактивировать все отзывы
       for (let item of reviews) {
         item.classList.remove('reviews__item--active');
       }
-      // включить отзыв, соответствующий номеру кнопки
+      // активировать отзыв, соответствующий номеру кнопки
       reviews[numButton].classList.add('reviews__item--active');
+
+      // Сдвиг слайдера в соответствующую позиция
+      list.style.marginLeft = `-${numButton}00%`;
     }
 
     // если клик по отдельным кнопкам на десктопе

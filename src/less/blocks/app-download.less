@@ -91,7 +91,9 @@
   &__main-button {
     width: 280px;
   
-    &:hover {
+    &:hover,
+    &:focus {
+      outline: none;
       background-color: @theme-color-4;
       color: @theme-color-2;
     }

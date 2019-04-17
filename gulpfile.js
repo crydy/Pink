@@ -86,6 +86,8 @@ exports.rmb = clearBuild;
 // Команда для работы с живым сервером
 exports.go = series(startServer, goWatch);
 exports.default = series(startServer, goWatch);
+// Обновить файлы для GitHubPages
+exports.refreshGHP = series(clearDocs, copyOnGHPages);
 // Полная пересборка проекта
 exports.build = series(clearBuild, // очистить build
                   parallel(

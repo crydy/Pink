@@ -15,6 +15,16 @@
   &__logo {
     display: flex;
     margin-bottom: 40px;
+
+    &:focus {
+      outline: none;
+
+      & > .page-footer__logo-image {
+        --main-logo__text-color: @theme-color-2;
+        --main-logo__ornamentals-color: @logo-ornamentals-color;
+        --main-logo__ornamentals-color: @theme-color-2;
+      }
+    }
     
     &-image {
       margin: auto;
@@ -69,8 +79,19 @@
       &:hover {
         --html-academy-logo-color: @theme-color-1-l;
       }
+      &:focus {
+        outline: none;
+        color: @theme-color-2;
+
+        & > .page-footer__copyright-icon {
+          --html-academy-logo-color: @theme-color-1-l;
+        }
+      }
       &:active {
-        --html-academy-logo-color: lighten(@theme-color-3, 70%);
+        color: lighten(@theme-color-3, 70%);
+        & > .page-footer__copyright-icon {
+          --html-academy-logo-color: lighten(@theme-color-3, 70%);
+        }
       }
     }
     

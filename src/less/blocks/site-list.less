@@ -52,8 +52,10 @@
       cursor: inherit;
     }
   
-    &[href]:hover {
+    &[href]:hover,
+    &[href]:focus {
       color: @theme-color-2;
+      outline: none;
     }
   
     &[href]:active {
@@ -87,8 +89,10 @@
     --main-logo__glasses-decoraged-display-value: none;
     --main-logo__i-dot-display-value: none;
     
-    &:not(.site-list__logo-image--index-page):hover {
+    &:not(.site-list__logo-image--index-page):hover,
+    &:not(.site-list__logo-image--index-page):focus {
       cursor: pointer;
+      outline: none;
       --main-logo__text-color: @theme-color-2;
       --main-logo__glasses-decorated-color: @theme-color-2;
       --main-logo__glasses-plain-color: @theme-color-2;
