@@ -75,10 +75,9 @@ const message = {
 // Команды консоли
 exports.server = startServer;
 exports.html = copyHTML;
-exports.js = copyJS;
 exports.less = lessToCss;
 exports.css = lessToCss;
-exports.server = startServer;
+exports.js = copyJS;
 exports.img = copyIMG;
 exports.fonts = copyFonts;
 exports.webp = createWEBP;
