@@ -129,7 +129,7 @@ function startServer(cb) {
   message.consoleServerStart();
   server.init({
     server: {
-      baseDir: "./build/"
+      baseDir: './build/'
     },
     notify: false
   });
