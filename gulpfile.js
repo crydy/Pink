@@ -79,8 +79,8 @@ exports.less = lessToCss;
 exports.css = lessToCss;
 exports.js = copyJS;
 exports.img = copyIMG;
-exports.fonts = copyFonts;
 exports.webp = createWEBP;
+exports.fonts = copyFonts;
 exports.rmb = clearBuild;
 // Команда для работы с живым сервером
 exports.go = series(startServer, goWatch);

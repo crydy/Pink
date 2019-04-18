@@ -113,7 +113,7 @@ textarea:focus:-ms-input-placeholder {
   height: 40px;
   border: 2px solid #e5e5e5;
   border-radius: 2px;
-  background-color: transparent;
+  background-color: #ffffff;
   transition-duration: 0.2s;
 }
 .custom-indicator-label input[type="checkbox"]:hover + .checkbox-indicator,
@@ -165,7 +165,7 @@ textarea:focus:-ms-input-placeholder {
   height: 40px;
   border: 2px solid #e5e5e5;
   border-radius: 50%;
-  background-color: transparent;
+  background-color: #ffffff;
   transition-duration: 0.2s;
 }
 .custom-indicator-label input[type="radio"]:hover + .radio-indicator,
@@ -1814,6 +1814,8 @@ textarea:focus:-ms-input-placeholder {
 .contacts__wrapper {
   padding-left: 20px;
   padding-right: 20px;
+  position: relative;
+  z-index: 1;
   padding-bottom: 40px;
 }
 @media (min-width: 660px) {
@@ -1910,13 +1912,14 @@ textarea:focus:-ms-input-placeholder {
   position: relative;
   height: 62.5vw;
   min-height: 100vh;
+  margin-top: -160px;
   background: url(../img/map-image.png) 50% 50% no-repeat;
 }
 .contacts__map-wrapper-clip {
   position: absolute;
   top: 0;
   width: 100%;
-  height: 10%;
+  height: 220px;
 }
 .contacts__map {
   width: 100%;
@@ -1924,21 +1927,21 @@ textarea:focus:-ms-input-placeholder {
 }
 @media (min-width: 660px) {
   .contacts__map-wrapper {
-    min-height: auto;
-    height: 56vw;
+    min-height: 700px;
   }
   .contacts__map-wrapper-clip {
-    height: 20%;
+    height: 220px;
   }
 }
 @media (min-width: 1040px) {
   .contacts__map-wrapper {
-    height: 42vw;
+    height: 35vw;
     background-size: cover;
     max-height: 1400px;
-    max-height: calc(1400px * 0.7);
+    max-height: calc(1400px * 0.4);
     max-width: calc(1400px * 3);
     margin: 0 auto;
+    margin-top: -120px;
   }
 }
 .photo-card {

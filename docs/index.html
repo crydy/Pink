@@ -103,9 +103,11 @@
     </symbol>
 
     <!--              SVG-костыли имитации clip-path для поддержки Edge              -->
-    <!-- Треугольная челка -->
+
+    <!-- Треугольная челка над катортой 
+         (с перекрытием верхних блоков-меню в iframe от гуглокарт) -->
     <svg id="clip-top-triangle" viewbox="0 0 100 100" preserveaspectratio="none">
-      <polygon fill="var(--clip-top-triangle-color)" points="0,0 50,100 100,0"></polygon>
+      <polygon fill="var(--clip-top-triangle-color)" points="0,0 0,50 50,100 100, 50 100,0"></polygon>
     </svg>
     <!-- Косой подрез правого угла снизу -->
     <svg id="clip-skew" viewbox="0 0 100 100" preserveaspectratio="none">
@@ -159,7 +161,10 @@
 
       <!-- Рука с телефоном -->
       <div class="app-download__picture-wrapper">
-        <img class="app-download__picture" src="img/hand-with-phone.png" width="560" height="645" alt="Изображение приложения Pink на телефоне">
+        <picture>
+          <source type="image/webp" srcset="img/webp/hand-with-phone.webp">
+          <img class="app-download__picture" src="img/hand-with-phone.png" width="560" height="645" alt="Изображение приложения Pink на телефоне">
+        </picture>
       </div>
 
       <!-- Менюшка -->
@@ -171,19 +176,28 @@
         <ul class="app-download__systems-list">
           <li class="app-download__systems-list-item">
             <a class="button app-download__systems-list-button" aria-label="Скачать приложение для Apple">
-              <img class="app-download__systems-list-img" src="img/apple-logo.png" alt="Лого Apple" width="56" height="56">
+              <picture>
+                <source type="image/webp" srcset="img/webp/apple-logo.webp">
+                <img class="app-download__systems-list-img" src="img/apple-logo.png" alt="Лого Apple" width="56" height="56">
+              </picture>
             </a>
           </li>
   
           <li class="app-download__systems-list-item">          
             <a class="button app-download__systems-list-button" aria-label="Скачать приложение для Android">
-              <img class="app-download__systems-list-img" src="img/android-logo.png" alt="Лого Android" width="56" height="56">
+              <picture>
+                <source type="image/webp" srcset="img/webp/android-logo.webp">
+                <img class="app-download__systems-list-img" src="img/android-logo.png" alt="Лого Android" width="56" height="56">
+              </picture>
             </a>
           </li>
   
           <li class="app-download__systems-list-item">
             <a class="button app-download__systems-list-button" aria-label="Скачать приложение для Windows">
-              <img class="app-download__systems-list-img" src="img/microsoft-logo.png" alt="Лого Windows" width="56" height="56">
+              <picture>
+                <source type="image/webp" srcset="img/webp/microsoft-logo.webp">
+                <img class="app-download__systems-list-img" src="img/microsoft-logo.png" alt="Лого Windows" width="56" height="56">
+              </picture>
             </a>
           </li>
         </ul>
@@ -206,10 +220,10 @@
       <div class="advantages__intro">
         <p class="advantages__intro-major">Устали от серости мегаполиса?<br><span class="advantages__intro-minor">Нам есть, что вам <br class="advantages__intro-minor-break">предложить!</span></p>
 
-      <!-- SVG-псевдо-clip-path для поддержки Edge -->
-      <svg class="advantages__intro-clip">
-        <use xlink:href="#clip-skew">
-      </use></svg>
+        <!-- SVG-псевдо-clip-path для поддержки Edge -->
+        <svg class="advantages__intro-clip">
+          <use xlink:href="#clip-skew">
+        </use></svg>
       </div>
 
       <div class="advantages__main-wrap">
@@ -296,7 +310,7 @@
           </li>
         </ul>
 
-        <!-- Переключатели слайдов -->
+        <!-- Переключатели слайдов с отзывами -->
         <div class="reviews__toggles slider-toggles">
           <button class="slider-toggles__item slider-toggles__item--active" type="button" aria-label="Показать первый отзыв" data-number="0"></button>
           <button class="slider-toggles__item" type="button" aria-label="Показать второй отзыв" data-number="1"></button>
@@ -377,7 +391,7 @@
           </tr>
         </table>
   
-        <!-- Переключатели слайдов -->
+        <!-- Переключатели колонок таблицы -->
         <div class="prices__toggles slider-toggles">
           <button class="slider-toggles__item" type="button" aria-label="Показать базовый тариф" data-number="0"></button>
           <button class="slider-toggles__item slider-toggles__item--active" type="button" aria-label="Показать стандартный тариф" data-number="1"></button>
@@ -414,9 +428,11 @@
       <!-- Карта -->
       <div class="contacts__map-wrapper">
 
-        <!-- <iframe class="contacts__map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1998.603728544154!2d30.320858716322096!3d59.93871648187625!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4696310fca145cc1%3A0x42b32648d8238007!2z0JHQvtC70YzRiNCw0Y8g0JrQvtC90Y7RiNC10L3QvdCw0Y8g0YPQuy4sIDE5LzgsINCh0LDQvdC60YIt0J_QtdGC0LXRgNCx0YPRgNCzLCAxOTExODY!5e0!3m2!1sru!2sru!4v1554195205002!5m2!1sru!2sru" frameborder="0" style="border:0" allowfullscreen></iframe> -->
+        <!-- Гуглокарта без кастомизации -->
+        <iframe class="contacts__map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1998.603728544154!2d30.320858716322096!3d59.93871648187625!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4696310fca145cc1%3A0x42b32648d8238007!2z0JHQvtC70YzRiNCw0Y8g0JrQvtC90Y7RiNC10L3QvdCw0Y8g0YPQuy4sIDE5LzgsINCh0LDQvdC60YIt0J_QtdGC0LXRgNCx0YPRgNCzLCAxOTExODY!5e0!3m2!1sru!2sru!4v1554195205002!5m2!1sru!2sru" frameborder="0" style="border:0" allowfullscreen=""></iframe>
 
-        <!-- SVG-превдо-clip-path для поддержки Edge -->
+        <!-- SVG-превдо-clip-path для поддержки Edge
+             с перекрытием верхних блоков-меню от гуглокарты -->
         <svg class="contacts__map-wrapper-clip">
           <use xlink:href="#clip-top-triangle">
         </use></svg>

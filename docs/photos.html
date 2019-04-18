@@ -103,9 +103,11 @@
     </symbol>
 
     <!--              SVG-костыли имитации clip-path для поддержки Edge              -->
-    <!-- Треугольная челка -->
+
+    <!-- Треугольная челка над катортой 
+         (с перекрытием верхних блоков-меню в iframe от гуглокарт) -->
     <svg id="clip-top-triangle" viewbox="0 0 100 100" preserveaspectratio="none">
-      <polygon fill="var(--clip-top-triangle-color)" points="0,0 50,100 100,0"></polygon>
+      <polygon fill="var(--clip-top-triangle-color)" points="0,0 0,50 50,100 100, 50 100,0"></polygon>
     </svg>
     <!-- Косой подрез правого угла снизу -->
     <svg id="clip-skew" viewbox="0 0 100 100" preserveaspectratio="none">
