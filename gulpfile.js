@@ -4,6 +4,7 @@ const { series, parallel, src, dest, watch } = require('gulp'),
       rm = require('gulp-rm'),                     // gulp: удаление в Gulp
       posthtml = require('gulp-posthtml'),         // html: подцеплен для функционирования posthtml-include
       include = require('posthtml-include'),       // html: используется для интеграции SVG-спрайта
+      htmlmin = require('gulp-htmlmin'),           // html: минификатор html
       less = require('gulp-less'),                 // css: препроцессор CSS
       postcss = require('gulp-postcss'),           // css: подцеплен для autoprefixer
       autoprefixer = require('autoprefixer'),      // css: авторасстановка вендерных префиксов
@@ -26,7 +27,7 @@ const message = {
   },
   consoleCopyHTML : function() {
     console.log('---                                                         ---');
-    console.log('-      Copy HTML (with <include> integration) >>> build       -');
+    console.log('-  HTML copy & minify (with <include> integration) >>> build  -');
     console.log('---                                                         ---');
   },
   consoleCopyJS : function() {
@@ -152,6 +153,9 @@ function copyHTML() {
     .pipe(posthtml([
       include()
     ]))
+    .pipe(htmlmin({
+      collapseWhitespace: true
+    }))
     .pipe(dest('build'));
 };
 
