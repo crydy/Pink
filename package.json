@@ -1,5 +1,5 @@
 {
-  "name": "Pink",
+  "name": "pink",
   "version": "1.0.0",
   "description": "",
   "main": "gulpfile.js",
@@ -11,6 +11,7 @@
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.4.3",
+    "@babel/preset-env": "^7.4.3",
     "browser-sync": "^2.26.3",
     "gulp": "^4.0.0",
     "gulp-autoprefixer": "^6.0.0",

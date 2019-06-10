@@ -17,6 +17,38 @@ const { series, parallel, src, dest, watch } = require('gulp'),
       server = require('browser-sync').create();   // живой сервер
 
 
+// Команды консоли
+exports.server = startServer;
+exports.html = copyHTML;
+exports.less = lessToCss;
+exports.css = lessToCss;
+exports.js = copyJS;
+exports.img = copyIMG;
+exports.webp = createWEBP;
+exports.fonts = copyFonts;
+exports.rmb = clearBuild;
+// Команда для работы с живым сервером
+exports.go = series(startServer, goWatch);
+exports.default = series(startServer, goWatch);
+// Обновить файлы для GitHubPages
+exports.refreshGHP = series(clearDocs, copyOnGHPages);
+// Полная пересборка проекта
+exports.build = series(clearBuild, // очистить build
+                  parallel(
+                    copyHTML,      // скопировать все html, заинлайнив sprite.svg через include
+                    lessToCss,     // компилировать css из less, с автопрефиксами и минимизацией
+                    copyJS,        // скопировать js-файлы
+                    copyFonts,     // скопировать шрифты
+                    copyIMG,       // скопировать изображения с оптимизацией
+                    createWEBP,    // создать webp-копии изображений в отдельный каталог
+                  ),
+                  clearDocs,       // почистить директорию docs
+                  copyOnGHPages,   // cкопировать сборку в docs для хостинга на GitHub
+                  startServer,     // запустить сервер для проверки (без прослушки ФС)
+                  function() { message.consoleRebuild() } // сообщить о завершении
+                );
+
+                
 // Пакет консольных сообщений
 const message = {
   consoleServerStart : function() {
@@ -71,38 +103,6 @@ const message = {
     console.log('---                                                         ---');
   }
 }
-
-
-// Команды консоли
-exports.server = startServer;
-exports.html = copyHTML;
-exports.less = lessToCss;
-exports.css = lessToCss;
-exports.js = copyJS;
-exports.img = copyIMG;
-exports.webp = createWEBP;
-exports.fonts = copyFonts;
-exports.rmb = clearBuild;
-// Команда для работы с живым сервером
-exports.go = series(startServer, goWatch);
-exports.default = series(startServer, goWatch);
-// Обновить файлы для GitHubPages
-exports.refreshGHP = series(clearDocs, copyOnGHPages);
-// Полная пересборка проекта
-exports.build = series(clearBuild, // очистить build
-                  parallel(
-                    copyHTML,      // скопировать все html, заинлайнив sprite.svg через include
-                    lessToCss,     // компилировать css из less, с автопрефиксами и минимизацией
-                    copyJS,        // скопировать js-файлы
-                    copyFonts,     // скопировать шрифты
-                    copyIMG,       // скопировать изображения с оптимизацией
-                    createWEBP,    // создать webp-копии изображений в отдельный каталог
-                  ),
-                  clearDocs,       // почистить директорию docs
-                  copyOnGHPages,   // cкопировать сборку в docs для хостинга на GitHub
-                  startServer,     // запустить сервер для проверки (без прослушки ФС)
-                  function() { message.consoleRebuild() } // сообщить о завершении
-                );
 
 
 // ---------------------------------------------------------
@@ -166,7 +166,9 @@ function copyJS() {
   return src('src/js/**/*.js')
   .pipe(dest('build/js'))
   .pipe(concat('all.js'))
-  .pipe(babel())
+  .pipe(babel({
+    "presets": ["@babel/preset-env"]
+  }))
   .pipe(terser({
     keep_fnames: true,
     mangle: false

@@ -1915,8 +1915,8 @@ textarea:focus:-ms-input-placeholder {
 }
 .contacts__map-wrapper {
   position: relative;
-  height: 62.5vw;
-  min-height: 100vh;
+  height: 600px;
+  min-height: 600px;
   margin-top: -160px;
   background: url(../img/map-image.png) 50% 50% no-repeat;
 }
